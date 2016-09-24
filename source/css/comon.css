@@ -1,0 +1,38 @@
+/*购物车头部*/
+*{padding:0;margin:0;}
+			ul,li{list-style: none;}
+			a{text-decoration: none;}
+			.top-backcolor{background: #efefef;height:18px;padding:12px 0;}
+   			.top-center{margin: 0 auto;height:30px;width:990px}
+   			.top-center ul{float: left;line-break: 18px;}
+   			.top-center ul span{color: #d20052;}
+   			.top-center ul a{color: #000000;font-size:16px}
+   			.top-center div{float:right}
+   			.top-center div li a{color: #000000;}
+   			.top-center div li span{color: #6666d2;}
+   			.top-center ul li{height:18px;padding:0 10px;float:left;font-size:18px;border-right: 1px solid #d2ccd2;display: inline-block;}
+			.top-center div li{float: left;padding:0 10px;border-right:1px solid #d2ccd2 ;list-style: none;}
+			#clear-right{border-right:none;}
+			.dind-top{height:90px;width:990px;margin:0 auto;clear: both;}
+			.dind-top img{float:left}
+			.dind-top div{float:right;height:68px;padding-top: 32px;}
+			.dind-top div dt{width:160px;position: relative;height:26px;font-size:12px;}
+			.dind-top div dt li{position: absolute;width: 160px;height:5px;background: #cccccc;list-style: none;}
+			.dind-top div dt li span{height:20px;width:20px;border-radius: 50%;display: block;text-align: center;line-height:20px;background: #cccccc;color:#FFFFFF;position: absolute;left:70px;top:-8px;}
+			.dind-top div dl dd{color:#cccccc;font-size:12px;width: 160px;text-align: center;}
+			.dind-top div dl {float: left;}
+	/*购物车底部*/	
+	  /*尾部*/
+		     .foot{clear:both;background:#f8f8f8;position: relative;border-top: 2px solid #A60D0D;margin-top:50px}
+		     .foot-ctn{width:990px;margin:0 auto;height:164px;}
+		     .foot-ctn dl{width:143px;height:108px;border-right: 1px dashed darkgray;padding-left:20px;float: left;margin-top: 16px;}
+		     .foot-ctn dl dt{font-size:15px;color:#000000}
+		     .foot-ctn dl dd li{line-height: 24px;font-size: 12px;color:gray}
+		     .foot-ctn .odl-noborder{border-right: none;}
+             .foot-ctn .oli-fontred{color:#A60D0D;font-size: 14px;}
+             /*尾部底部*/		
+             .foot-bottom{width:990px ;margin:0 auto;height:42px;border-top: 1px dashed darkgray;}
+             .foot-bottom .foot-bottom-left{width:170px;line-height: 42px;font-size:12px;float:left}     
+		     .foot-bottom ul{float: right;width:590px;height:42px}
+		     .foot-bottom ul li{padding:0 5px;float: left;font-size:12px;height:42px;line-height: 42px;}
+				

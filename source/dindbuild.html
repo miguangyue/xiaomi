@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/**{padding:0;margin:0;}
+			ul,li{list-style: none;}
+			a{text-decoration: none;}
+			.top-backcolor{background: #efefef;height:18px;padding:12px 0;}
+   			.top-center{margin: 0 auto;height:30px;width:990px}
+   			.top-center ul{float: left;line-break: 18px;}
+   			.top-center ul span{color: #d20052;}
+   			.top-center ul a{color: #000000;font-size:16px}
+   			.top-center div{float:right}
+   			.top-center div li a{color: #000000;}
+   			.top-center div li span{color: #6666d2;}
+   			.top-center ul li{height:18px;padding:0 10px;float:left;font-size:18px;border-right: 1px solid #d2ccd2;display: inline-block;}
+			.top-center div li{float: left;padding:0 10px;border-right:1px solid #d2ccd2 ;list-style: none;}
+			#clear-right{border-right:none;}
+			.dind-top{height:90px;width:990px;margin:0 auto;clear: both;}
+			.dind-top img{float:left}
+			.dind-top div{float:right;height:68px;padding-top: 32px;}
+			.dind-top div dt{width:160px;position: relative;height:26px;font-size:12px;}
+			.dind-top div dt li{position: absolute;width: 160px;height:5px;background: #cccccc;list-style: none;}
+			.dind-top div dt li span{height:20px;width:20px;border-radius: 50%;display: block;text-align: center;line-height:20px;background: #cccccc;color:#FFFFFF;position: absolute;left:70px;top:-8px;}
+			.dind-top div dl dd{color:#cccccc;font-size:12px;width: 160px;text-align: center;}
+			.dind-top div dl {float: left;}*/
+			.hedui{width:990px;border:1px solid #CCCCCC;padding-bottom: 2px;margin:0 auto;}
+			.hedui p{height:44px;font-size: 20px;line-height:44px;background: #f8f8f8;padding:6px 25px 6px 25px;width: 938px;margin:1px 1px 15px 1px;}
+			.liaobiao1{background:#f8f8f8;width:950px}
+			.liaobiao1{width:950px;line-height:28px;;margin:0 20px;height:29px;}
+			.liaobiao1 li{float: left;background:#f8f8f8;height:28px}
+			.lb-li1{width:467px;text-align:center;}
+			.lb-li2{width:120px;text-align:center;}
+			.lb-li3{width:155px;text-align:center;}
+			.lb-li4{width:123px;text-align:center;}
+			.lb-li5{width:83px;text-align:center;}
+			.liaobiao table{width:950px;margin:0 20px;margin-top:10px;}
+			/*.liaobiao table tr p{display: none;}*/
+			.lb-li1 span{color: #3366cc;vertical-align: middle;position: relative;top:-40px;left:5px;}
+			.lb-li1 input{vertical-align: middle;}
+			.tab-tr{border-bottom: 1px dashed #e6e6e6;border-top: 1px dashed #e6e6e6;}
+			.lb-li3 input{width:38px;height:27px;text-align: center;line-height: 27px;}
+			.lb-li3 p{width:94px;height:27px;border:1px solid #e6e6e6;line-height: 27px;margin-top:14px}
+			.lb-li3 button{width:26px;height:27px;}
+			#lb-right{text-align: left;}
+			.jishu{height:64px;width:950px;padding-top:16px;}
+			.jishu ul{float: right;}
+			.jishu ul li{float: left;}
+			.jishu-ctn{width:140px;}
+			.jishu-ctn1{width:136px;}
+			.jieshuan{width:950px;height:62px;clear: both;background: #F8F8F8;line-height: 62px;}
+			.jieshuan p{line-height: 62px ;color:#3366CC;float: left;width:550px;font-size: 12px;}
+			.jieshuan p span{color:#e02d2d;}
+			.jieshuan ul {float:right;}
+			.jieshuan-li{width:200px;}
+			.jieshuan-li span{color:#e02d2d}
+			.jieshuan ul li{float: left;}
+			.jieshuan-li1{width:134px;}
+			.jieshuan-li1 input{width:136px;height:40px;line-height: 40px;background: #e02d2d;text-align: center;}
+			  /*尾部*/
+			 
+		     /*.foot{clear:both;background:#f8f8f8;position: relative;border-top: 2px solid #A60D0D;margin-top:50px}
+		     .foot-ctn{width:990px;margin:0 auto;height:164px;}
+		     .foot-ctn dl{width:143px;height:108px;border-right: 1px dashed darkgray;padding-left:20px;float: left;margin-top: 16px;}
+		     .foot-ctn dl dt{font-size:15px;color:#000000}
+		     .foot-ctn dl dd li{line-height: 24px;font-size: 12px;color:gray}
+		     .foot-ctn .odl-noborder{border-right: none;}
+             .foot-ctn .oli-fontred{color:#A60D0D;font-size: 14px;}
+             /*尾部底部*/	
+             /*	
+             .foot-bottom{width:990px ;margin:0 auto;height:42px;border-top: 1px dashed darkgray;}
+             .foot-bottom .foot-bottom-left{width:170px;line-height: 42px;font-size:12px;float:left}     
+		     .foot-bottom ul{float: right;width:580px;height:42px}
+		     .foot-bottom ul li{padding:0 5px;float: left;font-size:12px;height:42px;line-height: 42px;}
+			 */
+			.tb{background:#ffefef;}
+		</style>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link href="css/comon.css" rel="stylesheet">
+		<script src="js/mycookie.js"></script>
+		<script src="js/jquery-1.12.0.js"></script>
+		<script>
+			$(function(){
+			var user=getCookie("user");
+		  	  $(".top-center div li").find("span").html(user);
+		  	  
+		  	  $(".tuichu").on("click",function(){
+		  	  		location.href="index.html";
+		  	  })
+				var str = getCookie("arr");
+				var index1=getCookie("index");
+				var arr=JSON.parse(str);
+				var odl=$(".dind-top dl").eq(0);
+				odl.find("li").css("background","#e02d2d")
+				odl.find("li").find("span").css("background","#e02d2d");
+				odl.find("dd").css("color","#e02d2d");
+				var sum=0;
+				$.each(arr, function(idx,item) {    
+				if(idx==index1){
+                var tablectn=$(".liaobiao table");
+				var tr1=$("<tr/>").appendTo(tablectn);
+				var tr2=$("<tr/>").appendTo(tablectn).addClass("tab-tr");
+				var tr3=$("<tr/>").appendTo(tablectn).addClass("tab-tr");
+				
+				var trtd1=$("<td/>").appendTo(tr1).addClass("lb-li1").attr("id","lb-right");
+				var trtd2=$("<td/>").addClass("lb-li2").appendTo(tr1);
+				var trtd3=$("<td/>").addClass("lb-li3").appendTo(tr1);
+				var trtd4=$("<td/>").addClass("lb-li4").appendTo(tr1);
+				var trtd5=$("<td/>").addClass("lb-li5").appendTo(tr1);
+				
+				var trtd21=$("<td/>").addClass("lb-li1").appendTo(tr2).attr("id","lb-right");
+				var trtd22=$("<td/>").addClass("lb-li2").appendTo(tr2);
+				var trtd23=$("<td/>").addClass("lb-li3").appendTo(tr2);
+				var trtd24=$("<td/>").addClass("lb-li4").appendTo(tr2);
+				var trtd25=$("<td/>").addClass("lb-li5").appendTo(tr2);
+				
+				var trtd31=$("<td/>").addClass("lb-li1").appendTo(tr3).attr("id","lb-right");
+				var trtd32=$("<td/>").addClass("lb-li2").appendTo(tr3);
+				var trtd33=$("<td/>").addClass("lb-li3").appendTo(tr3);
+				var trtd34=$("<td/>").addClass("lb-li4").appendTo(tr3);
+				var trtd35=$("<td/>").addClass("lb-li5").appendTo(tr3);
+				trtd1.html($("<img/>").attr("src",item.img).css({"width":"89px","height":"55px"}))
+				$("<span>").text(item.ctn).appendTo(trtd1);
+				trtd4.html("-");
+				trtd21.html($("<input/>").attr("type","radio"))
+				trtd21.find("input").after(item.ctn)
+				trtd22.text(item.price);
+				trtd23.html($("<p/>").html($("<button>").html("-").addClass("bjian1")))
+				$("<input/>").html("1").addClass("bianhua").attr({"type":"text","value":"1"}).appendTo(trtd23.find("p"));
+				$("<button>").html("+").addClass("bjia").appendTo(trtd23.find("p"));
+				trtd24.html(item.price)
+				trtd25.html("有货");
+				}
+//				trtd31.html($("<input/>").attr("type","radio"))
+//              
+//				
+//				trtd31.find("input").after(item.ctn)
+//				trtd32.text(item.price);
+//				trtd33.html($("<p/>").html($("<button>").html("-").addClass("bjian")))
+//				$("<input/>").html("1").addClass("bianhua").attr({"type":"text","value":"1"}).appendTo(trtd33.find("p"));
+//				$("<button>").html("+").addClass("bjia").appendTo(trtd33.find("p"));
+//				trtd34.html(item.price)
+//				trtd35.html("有货");
+				
+				});
+				var c=0;
+				var ipt=0;
+				var ipt1=0;
+				var zjia=0;
+				var c1=0;
+				var sum=0;
+				var jarr=[];
+				 $("table").on("click","button",function(){
+					  		var index=$(this).index();
+					  		//alert(index)
+					  	var zonjia=$(this).parents("td").prev("td").text();
+					  	  zonjia=parseInt(zonjia.slice(1))
+					  	
+					  		if(index==0){
+					  			ipt=parseInt($(this).next("input").val());
+					  			if(ipt>1){
+					  			
+					  				c=ipt-1;	
+					  				$(this).next("input").val(c)
+					  				zjia=zonjia*c;
+					  				
+					  				
+					  			}
+					  		}
+					  		if(index==2){
+					  			ipt1=parseInt($(this).prev("input").val());
+					  			  c=ipt1+1;
+					  			 // alert(c)
+					  				$(this).prev("input").val(c)
+					  				zjia=zonjia*c;
+					  			
+					  		}
+					  		
+					  		$(".jishu-ctn").find("span").html(c)
+					  		//sum+=zjia
+					  		jarr.push(zjia)
+			  				 $(".jishu-ctn2").html("￥"+zjia)
+			  				 
+			  				 $(this).parents("td").next("td").html("￥"+zjia);
+			  				 $(".jieshuan-li").find("span").html("￥"+zjia)
+			  				 addCookie("zjia",JSON.stringify(zjia),1);
+			  					
+					  })
+				
+				
+				$("table tr p").hide();
+				
+					
+				
+				$(":radio").on("click",function(){
+					//$(this).parent().parent().css("background","#ffefef").siblings("tr").css("background","#fffff");
+					$(this).parent().parent().addClass("tb").siblings(".tab-tr").removeClass("tb");
+					//var obtn=$(this).parent().parent().find("lb-li3").find("button");
+					$(this).parent().parent().find("p").show().parent().parent().siblings("tr").find("p").hide();
+					
+					
+				})
+				$(".jieshuan-li1").on("click",function(e){
+					location.href="tianxue.html";
+					var odl=$(".dind-top dl").eq(0);
+					odl.find("li").css("background","#e02d2d")
+				    odl.find("li").find("span").css("background","#e02d2d");
+				    odl.find("dd").css("color","#e02d2d");
+				    e.preventDefault();
+				})
+				
+			})
+		
+		</script>
+	</head>
+	<body>
+		<div class="top-backcolor">
+			<div class="top-center">
+				<ul>
+					<li><a href="#"> ZOL商城</a></li>
+					<li><a href="#">收藏</a></li>
+					<li><a href="#">订阅团购推荐<img src="img1/z.png"></a></li>
+					<li id="clear-right">客服电话:<span>400-678-0068</span></li>
+				</ul>
+				<div>
+					<li>您好，<span>5454552415</span></li>
+					<li><a href="#" class="tuichu">退出</a></li>
+					<li id="clear-right"><a href="dindan.html">我的订单</a></li>
+				</div>
+			</div>
+		
+		</div>
+		<div class="dind-top">
+			<img src="imgs/img1.jpg">
+			<div>
+				<dl>
+					<dt><li><span>1</span></li></dt>
+					<dd>1核对商品信息</dd>
+				</dl>
+				<dl>
+					<dt><li><span>2</span></li></dt>
+					<dd>2填写订单信息</dd>
+				</dl>
+				<dl>
+					<dt><li><span>3</span></li></dt>
+					<dd>成功提交订单</dd>
+				</dl>
+			
+			</div>
+		
+		</div>
+		<div class="hedui">
+			<p>选择商品的类型和数量</p>
+			<div class="liaobiao clearfix">
+				<ul class="liaobiao1">
+					<li class="lb-li1">商品</li>
+					<li class="lb-li2">单价(元)</li>
+					<li class="lb-li3">典型和数量</li>
+					<li class="lb-li4">总价(元)</li>
+					<li class="lb-li5">库存</li>
+				</ul>
+				
+				<table>
+					<!--<tr>
+						<td  class="lb-li1"><img src="imgs/liebiao.jpg"><span>索尼  Xperia Z1三防手机超值低价，顺丰包邮！原装赠送索尼原装耳机</span></td>
+						<td  class="lb-li2"></td>
+						<td  class="lb-li3"></td>
+						<td  class="lb-li4">-</td>
+						<td  class="lb-li5"></td>
+					</tr>
+					<tr class="tab-tr">
+						<td class="lb-li1" id="lb-right"><input type="radio">官方标配【紫色】(索尼 Xperia Z1官方标配【紫色】)</td>
+						<td class="lb-li2">￥1399</td>
+						<td class="lb-li3"><p><button>-</button><input type="text" value="1"><button>+</button></p></td>
+						<td class="lb-li4">￥1399</td>
+						<td class="lb-li5">有货</td>
+					</tr>
+					<tr class="tab-tr">
+						<td class="lb-li1" id="lb-right"><input type="radio">官方标配【紫色】(索尼 Xperia Z1官方标配【紫色】)</td>
+						<td class="lb-li2">￥1399</td>
+						<td class="lb-li3"><p><button>-</button><input type="text" value="1"><button>+</button></p></td>
+						<td class="lb-li4">￥1399</td>
+						<td class="lb-li5">有货</td>
+					</tr>-->
+				</table>
+				<div class="jishu">
+					<ul>
+						<li class="jishu-ctn"><span>0</span>件商品，总商品金额:</li>
+						<li class="jishu-ctn2">￥0.00</li>
+					</ul>
+				
+				</div>
+				<div class="jieshuan">
+					<p><span>&gt;</span>返回查看商品信息</p>
+					<ul>
+						<li class="jieshuan-li">合计(不含运费):<span>￥0.00</span></li>
+						<li class="jieshuan-li1"><input type="button" value="确定"></li>
+					</ul>
+				
+				</div>
+				
+			</div>
+		</div>
+		 <div class="foot">
+        	<div class="foot-ctn">
+        		<dl>
+        			<dt>帮助中心</dt>
+        			<dd>
+        				<li>购物指南</li>
+        				<li>优惠卷红包</li>
+        				<li>常见问题</li>
+        				<li>售后服务</li>
+        			</dd>
+        		</dl>
+        		<dl>
+        			<dt>手机版Z团</dt>
+        			<dd>
+        				<li>iphone客户端</li>
+        				
+        			</dd>
+        		</dl>
+        		<dl>
+        			<dt>关注Z团</dt>
+        			<dd>
+        				<li>Z团新浪微博</li>
+        				<li>Z团腾讯微博</li>
+        				
+        			</dd>
+        		</dl>
+        		<dl>
+        			<dt>商务合作</dt>
+        			<dd>
+        				<li>媒体合作</li>
+        				
+        			</dd>
+        		</dl>
+        		<dl>
+        			<dt>公司信息</dt>
+        			<dd>
+        				<li>关于中关村在线</li>
+        			
+        			</dd>
+        		</dl>
+        		<dl class="odl-noborder">
+        			<dt>客服电话</dt>
+        			<dd>
+        				<li class="oli-fontred">400-678-0086</li>
+        				<li>周一致周日 9:00-18:00</li>
+        				
+        			</dd>
+        		</dl>
+        	
+        	
+        	</div>
+        	<div class="foot-bottom">
+	        		<div class="foot-bottom-left">
+	        			<p>@2015中关村在线  版权所有</p>
+	        		</div>
+	        		<ul>
+	        			<li>ZOL简介</li>
+	        			<li>ZOL历程</li>
+	        			<li>广告服务</li>
+	        			<li>招聘(9月)</li>
+	        			<li>互动营销</li>
+	        			<li>品牌大全</li>
+	        			<li>站点地图</li>
+	        			<li>联系方式</li>
+	        			<li>RSS订阅</li>
+	        			<li style="color: #ff0000;">反馈/纠错</li>
+	        		
+	        		</ul>
+        	</div>
+        
+        </div>
+		
+	</body>
+</html>

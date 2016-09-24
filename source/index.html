@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	
+	 <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	 <style>
+	
+   /*center*/
+  .center{background: #fef5e6;padding-top: 16px;padding-bottom: 30px;}
+  .ctn{width:962px;height:92px;margin:0 auto;border-top: 2px solid #b20000;padding:0 14px;border-bottom: 1px solid #d9c7a7;border-left: 1px solid #d9c7a7;border-right: 1px solid #d9c7a7;background: #FFFFFF;}
+  .ctndl1{height: 46px;border-bottom: 1px dashed gray;}
+  .ctndl1 dd,.ctndl2 dd{width:60px;line-height:46px;}
+  .ctndl1 dt li{padding:0 20px;float: left;line-height: 46px;}
+  .ctndl1 dd,.ctndl1 dt{float:left;}
+  .ctndl1 dt span{color: gray;margin-left: 2px;}
+  .ctndl1 dt li a,.ctndl2 dt li a{color:#000000}
+  .ctndl2 dt{padding-top: 10px;}
+  .ctndl2 dt li{padding:0 15px;background: #f7f7f7;float:left;line-height: 24px;border: 1px solid #E6E6E6;}
+  .ctndl2 dd,.ctndl2 dt{float: left;}
+  .ctn2{padding-top: 30px;width:990px;margin:0 auto;position: relative;}
+  .ctn2_div{height:375px;}
+  .ctn2_div dl{width:340px;border: 1px solid #d9c7a7;padding: 10px 10px 0 12px;background: #FFFFFF;}
+  .ctn2_div dl dd .p1{line-height:22px; font-size: 18px;margin-top: 5px;}
+  .ctn2_div dd{height:120px}
+  .ctn2_div .p2 strong{color:#CC0000;font-size: 20px;}
+  .p2{border-bottom: 1px solid #dbdbdb;padding-bottom: 8px;}
+  .p2 span{font-size: 10px;text-decoration: line-through;margin-left: 18px;color:gray}
+  .p2 b{float: right;font-size: 15px;color:red}
+  .ctn2_div dd li{color: gray;font-size: 14px;line-height:35px}
+  .red{color:red;}
+  .ctn2_div dd li b{float:right;}
+  .ctn2_div dl{float:left}
+  .ctn2_div .ctn2_dl{margin-left:20px}
+ 
+  /*lunbo*/
+ #box {
+				width: 232px;
+				height: 186px;
+				position: relative;
+				overflow: hidden;
+				margin: 10px auto;
+			}
+			
+			#list {
+				height: 186px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			#list li {
+				width: 232px;
+				height: 186px;
+				float: left;
+			}
+			
+			#list img {
+				width: 232px;
+				height: 186px;
+			}
+			
+			#list2 {
+				width: 70px;
+				height: 15px;
+				position: absolute;
+				right: 20px;
+				bottom: 20px;
+			}
+			
+			#list2 li {
+				width: 15px;
+				height: 15px;
+				background: #fffff;
+				border: 1px solid black;
+				float: left;
+				margin-left: 5px;
+				text-align: center;
+				line-height: 15px;
+				cursor: pointer;
+			}
+			
+			/*弹窗登录*/
+			a{text-decoration: none;}
+			.box{width:330px;height:370px;border: 1px groove gray;position: absolute;display: none;background:#FEF5E6}
+			.head{height:40px;background:#fafafa;line-height:40px;padding:0 20px;}
+			.headspan1{float: left;}
+			.headspan2{float:right;display:inline-block;width:20px;border-radius: 100%;height:20px;text-align: center;vertical-align: middle;line-height:20px;margin-top:10px;margin-right:5px}
+			.headspan2:hover{background: gray;color: #FAFAFA;}
+			form{padding:0 20px;}
+			.user,.pwd{width:290px;height:40px;margin-top: 10px;}
+	        form p{margin-top:10px;}
+	        form p a{float:right}
+			form button{width:290px;height:40px;background: red;}
+			
+			.tuangou{width:990px;margin:0 auto;border: 1px solid #d9c7a7;}
+			.tuangou-ul{height:40px;background: #fef5e6;border-bottom: none;position: relative;}
+  			.tuangou-ul li{float: left;padding:0 16px;line-height: 39px;border-right: 1px solid #d9c7a7;border-bottom: 1px solid #d9c7a7;}
+  			.tuangou-ul p{width:840px;height:40px;border-bottom: 1px solid #d9c7a7;position: absolute;right:0}
+  			.tuangou-ul1 {height:52px;clear: both;;border-left:1px solid #d9c7a7;border-bottom: #d9c7a7;border-left: #d9c7a7;width: 990px;background: #FFFFFF;display: none;}
+  			.tuangou-ul1 li{padding:0 16px ;line-height: 52px;font-size: 12px;float: left;}
+  			.box img{display: none;vertical-align: middle;}
+	 </style>
+	 <script src="js/jquery-1.12.0.js"></script>
+	 <script src="js/mycookie.js"></script>
+	 <script src="js/day19-move.js"></script>
+	 <link rel="stylesheet" href="css/comindex.css" />
+	 <script>
+	        function showBtn(allBtn, index) {
+
+			// 清空所有按钮
+			for (var j = 0; j < allBtn.length; j++) {
+				allBtn[j].style.background = "#ffffff";
+			}
+			    allBtn[index].style.background = "red";		
+			}
+	 onload = function() {
+	var oList = document.getElementById("list");
+	
+	oList.innerHTML += oList.innerHTML;
+	
+	var allLi = oList.getElementsByTagName("li");
+	
+	// 存放切换按钮的ul
+	var oList2 = document.getElementById("list2"); 
+	//  所有按钮
+	var allLi2 = oList2.getElementsByTagName("li");
+	
+	
+	
+	// 图片的宽度
+	var width = allLi[0].offsetWidth;
+	var height = allLi[0].offsetHeight;
+	
+	// 改变list的宽度，使得li可以水平浮动
+	oList.style.width = (allLi.length * width) + "px";
+
+
+	// 思路：
+	//   (1) 定时更新
+	//   (2) 点击按钮更新图片
+	//   (3) 上一页、下一页需要考虑当前是否在滚动
+	
+	var t = 1000;
+	var timer = setTimeout(move, t);
+	
+	// 滚动图片的下标
+	var i = 0;
+	
+	var isMoving = false;
+	
+	function move() {
+		
+		// 标志移动开始 
+		isMoving = true;
+		
+		// 滚动到下一张图片
+		i++;
+		
+		
+		var iLeft = -1 * i * width;
+		
+		// console.log("当前图片的下标：" + i);
+		
+		// 动画显示下标为i的图片
+		startMove(oList, "left", iLeft, next);
+		
+		// 当前要显示按钮的下标
+		var index = i;
+		if (i >= allLi.length/2) {
+			index = 0;
+		}
+		
+		// 自定义函数，显示下标为 index 的图片
+		showBtn(allLi2, index);
+	}
+	
+	function next() {
+		if (i >= allLi.length / 2) {
+			i = 0;
+			// 瞬间回到第0张
+			oList.style.left = "0px";
+		}
+		
+		timer = setTimeout(move, t);
+		
+		// 标志移动结束
+		isMoving = false;
+	}
+	
+	// 遍历所有按钮，给每个按钮添加点击事件处理函数，实现点击切换效果
+	for (var j = 0; j < allLi2.length; j++) {
+		// 保存下标
+		allLi2[j].xxx = j;
+		
+		allLi2[j].onclick = function() {
+			
+			// 清除定时器
+			clearTimeout(timer);
+			
+			// 取出点击按钮的下标赋值给 i， 
+			/// 因为 move函数存在中 i++ 的操作
+			// 所以需要减1，确保下次滚动 this.xxx 这张图片上
+			i = this.xxx - 1;
+			
+			// 切换到i的【下一张】图片
+			move();
+		}
+	}
+  }
+	 		jQuery(function($){
+	 		var nav=$("#nav_1").find("ul")
+	 		nav.find("li").eq(0).css("background","#1c1c1c")
+	 		nav.find("li").on("click",function(){
+	 		var indexof=$(this).index();
+	 			nav.find("li").eq(indexof).css("background","#1c1c1c").siblings("li").css("background","#b20000");	
+	 				e.preventDefault();
+	 			
+	 		
+	 		})
+	 			
+			/*登录弹窗*/
+			$(".pop").on("click",function(e){
+			
+			 if($(this).text()!==" "){
+			
+				$(".box").show().css({
+          		    //触发时弹窗居中
+          			left:($(window).width()-$(".box").outerWidth())/2,
+          			top:($(window).height()-$(".box").outerHeight())/2
+          		});
+          		//阻止默认行为
+          		e.preventDefaults();
+          	 }
+			})
+			  //scroll滚动事件，resize事件,滚动条滚动触发，页面大小发生改变时触发
+            $(window).on("scroll resize",function(){
+            //stop()阻止动画队列：即动画排队
+            //$(window).scrollTop(),$(window).scrollLeft()滚动条的位置
+            	$(".box").stop().animate({
+            		left:($(window).width()-$(".box").outerWidth())/2+$(window).scrollLeft(),
+            		top:($(window).height()-$(".box").outerWidth())/2+$(window).scrollTop()
+            	})
+              
+            })
+            //登录弹窗
+            var strc=getCookie("obj");
+		      var arrc1=JSON.parse(strc);
+		      var look=false;
+		      var look1=false;
+		       $.each(arrc1, function(idx1,item1) { 
+		        //alert()
+	       	       var tel=item1.tel;
+	       	       var pwd1=item1.pwd1;
+	       	       $(".user").on("blur",function(){
+	       	       var str=$(".user").val();
+	       	       		if(str!==tel){
+	       	       		 //alert(str!==tel)
+	       	       		
+	       	           		$(".box img").eq(0).slideUp();
+	       	           		
+	       	       			$(".tishi").html("输入的账户有错").css("color","red");
+	       	       			look=false;
+	       	       		}else{
+	       	       			$(".box img").eq(0).slideDown();
+	       	  
+	       	       			$(".box").animate({"width":"370px"}).find(".user").animate({"width":"300px"})
+	       	       			look=true;
+	       	       			$(".tishi").empty();
+	       	       		}
+	       	       		//alert(look)
+	       	       })
+	       	      
+	       	       $(".pwd").on("blur",function(){
+	       	           var str1=$(this).val();
+	       	           if(str1!==pwd1){
+	       	           
+	       	           		$(".box img").eq(1).slideUp();
+	       	           		
+	       	           		look1=false;
+	       	           	   $(".tishi").html("输入的密码有错").css("color","red");
+	       	           }else{
+	       	           		look1=true;
+	       	           		$(".pwd").animate({"width":"300px"})
+	       	           		$(".box img").eq(1).slideDown();
+	       	           		$(".box .btn1").animate({"width":"310px"})
+	       	           		$(".tishi").empty();
+	       	           }
+	       	          // alert(look1)
+	       	       })
+	       	      $(".btn1").on("click",function(e){
+	       	      
+	       	      	 if(look&&look1){
+	       	      	 var uservalue=$(".user").val();
+	       	      	 addCookie("user",uservalue,10);
+			       	  if($(":checkbox").is(":checked")){
+			       	 
+				       		//var uservalue=$(".user").val();
+				       		var pwdvalue=$(".pwd").val();
+				       		//addCookie("user",uservalue,10);
+				       		addCookie("pwd",pwdvalue,10);
+				       		
+			       	  }
+			       	  if($(".user").val().length==0||$(".pwd").val().length==0){
+			       	  	 	$(".tishi").html("用户名/密码不能为空");
+			       	  }
+			       	  		$(".deuser").text(uservalue);
+				       		$(".pop").text(" ");
+			       	   		alert("登陆成功");
+			       	   		e.stopPropagation();
+			       	   		$(".top_right_b").on("click",function(){
+			       	   			location.href="index.html"
+			       	   		})
+			       	   		$(".top_right_no").on("click",function(){
+			       	   			location.href="dindan.html";
+			       	   			alert()
+			                 })
+			       	   		e.preventDefault()
+			       	   		$(".box").hide();
+			       	   }else{
+			       	   		alert("登录失败")
+			       	   		$(".deuser").html("欢迎来到Z团购物！请");
+				       	    $(".pop").html("登录");
+			       	   }
+			    
+		         })
+//	       	      读取cookie
+	       	   var user=getCookie("user");
+		       var pwd=getCookie("pwd");
+			       if(user&&pwd){
+			       		$(".user").val(user);
+			       		$(".pwd").val(pwd);
+			       		alert("登陆成功")
+			       		$(".deuser").html(user);
+				       	$(".pop").html(" ");
+				       	$(".top_right_b").on("click",function(){
+			       	   			location.href="index.html"
+			       	   	 })
+				       	$(".top_right_no").on("click",function(){
+		       	   			location.href="dindan.html";
+		       	   		
+			  			 })
+			       }
+		
+		       	    
+		       });
+
+
+			   $(".headspan2").on("click",function(){
+					$(".box").remove();
+			   
+			   })
+			   $(".tuangou-ul li").eq(0).css({"background":"#ffffff","border-bottom":"none","border-top":"2px solid #b20000"})
+			   $(".tuangou-ul1").show();
+			   $(".tuangou-ul li").on("click",function(){
+			   		$(".tuangou-ul1").hide();
+			   		$(".tuangou-ul li").css({"background":"#fef5e6","border-bottom":"1px solid #d9c7a7","border-top":"none"})
+			   		$(".tuangou-ul li").eq($(this).index()).css({"background":"#ffffff","border-bottom":"none","border-top":"2px solid #b20000"})
+			   		    $(".tuangou-ul1").show();
+			   		
+			   })
+			
+			
+		});
+	 
+	 
+	 
+	 </script>
+
+	</head>
+	<body>
+	
+		<div id="top">
+		  <div class="top_top">
+				<div id="top_1">
+					<ul class="top_left">
+						<li class="top_no_left">ZOL团商城</li><li>收藏</li><li>订阅团购推荐<img src="img1/z.png"/></li><li class="top_no_border">客服电话：<span>400-678-0068</span></li>
+					</ul>
+					<ul class="top_right">
+						<li class="top_right_no">我的订单</li><li class="top_right_b">退出</li><li >您好，<b class="deuser">欢迎来到Z团购物！请</b><a class="pop">登录</a></li>
+					</ul>
+				</div>
+			</div>
+			<ul class="top_middle">
+				<li class="top_middle_logo"><a href="#"><img src="img1/logo.jpg"/></a></li>
+				<li class="top_middle_middle"><input type="text" placeholder="请输入商品名称" value=""/><button>搜  &nbsp; 索</button></li>
+				<li class="top_middle_right">
+					<dl>
+						<dt><img src="img1/z_1.jpg"/></dt>
+						<dd>正品行货</dd>
+					</dl>
+					<dl class="top_middle_right_1">
+						<dt><img src="img1/z_2.jpg"/></dt>
+						<dd>无忧退款</dd>
+					</dl>
+					<dl class="top_middle_right_no">
+						<dt><img src="img1/z_3.jpg"/></dt>
+						<dd>服务保障</dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+	<div id="nav">
+		<div id="nav_1">
+		<ul>
+			<li><a href="#">首页</a></li>
+			<li><a href="#">Z爆款</a></li>
+			<li><a href="#">数码团</a></li>
+			<li><a href="#">即将开团</a></li>
+			<li><a href="#">服务保障</a></li>
+			<li><a href="售后服务.html">帮助中心</a></li>
+		</ul>
+		<span id="nav_1_right">最近浏览&nbsp;<img src="img1/z_2.png"/></span>
+		</div>
+	</div>
+	<!--center-->
+	<div class="center">
+		<div class="ctn">
+			<dl class="ctndl1">
+				<dd><strong>数码精品:</strong></dd>
+				<dt>
+					<li><a href="#">全部</a></li>
+					<li><a href="#">手机通迅</a><span>34</span></li>
+					<li><a href="#">数码影像/视听</a><span>46</span></li>
+					<li><a href="#">笔记本电脑</a><span>9</span></li>
+					<li><a href="#">电脑外设</a><span>9</span></li>
+					<li><a href="#">DIY主机/配件</a><span>11</span></li>
+					<li><a href="#">家电/其他</a><span>29</span></li>
+					<li><a href="#">智能生活</a><span>10</span></li>
+				</dt>
+			
+			</dl>
+			<dl class="ctndl2">
+				<dd><strong>排序方式:</strong></dd>
+				<dt>
+					<li><a href="#">默认</a></li>
+					<li><a href="#">最新团购<img src="img/zjtou.jpg"/></a></li>
+					<li><a href="#">销量最高<img src="img/zjtou.jpg"></a></li>
+					<li><a href="#">关注最高<img src="img/zjtou.jpg"></a></li>
+				</dt>
+			</dl>
+		</div>
+		
+		<div class="ctn2">
+			<div class="ctn2_div">
+				<dl>
+					<dt><a href="#"><img src="img/ctn2.jpg"></a></dt>
+					<dd>
+						<p class="p1">索尼Xperia Z1三防手机超值低价！顺丰包邮！原装赠索尼原装耳机</p>
+						<p class="p2"><strong>￥1399</strong><span>￥2300</span><b>5.8折</b></p>
+						<li>剩余:<span class="red">3</span>天<span class="red">09</span>时<span class="red">11</span>分<span class="red">29</span>秒<b>395656人关注</b></li>
+					</dd>
+				
+				</dl>
+				<dl class="ctn2_dl">
+					<dt><a href="#"><img src="img/ctn2.jpg"></a></dt>
+					<dd>
+						<p class="p1">索尼Xperia Z1三防手机超值低价！顺丰包邮！原装赠索尼原装耳机</p>
+						<p class="p2"><strong>￥1399</strong><span>￥2300</span><b>5.8折</b></p>
+						<li>剩余:<span class="red">3</span>天<span class="red">09</span>时<span class="red">11</span>分<span class="red">29</span>秒<b>395656人关注</b></li>
+					</dd>
+				
+				</dl>
+			</div>
+			<div class="ctn2_div">
+				<dl>
+					<dt><a href="#"><img src="img/ctn2.jpg"></a></dt>
+					<dd>
+						<p class="p1">索尼Xperia Z1三防手机超值低价！顺丰包邮！原装赠索尼原装耳机</p>
+						<p class="p2"><strong>￥1399</strong><span>￥2300</span><b>5.8折</b></p>
+						<li>剩余:<span class="red">3</span>天<span class="red">09</span>时<span class="red">11</span>分<span class="red">29</span>秒<b>395656人关注</b></li>
+					</dd>
+				
+				</dl>
+				<dl class="ctn2_dl">
+					<dt><a href="#"><img src="img/ctn2.jpg"></a></dt>
+					<dd>
+						<p class="p1">索尼Xperia Z1三防手机超值低价！顺丰包邮！原装赠索尼原装耳机</p>
+						<p class="p2"><strong>￥1399</strong><span>￥2300</span><b>5.8折</b></p>
+						<li>剩余:<span class="red">3</span>天<span class="red">09</span>时<span class="red">11</span>分<span class="red">29</span>秒<b>395656人关注</b></li>
+					</dd>
+				
+				</dl>
+			</div>
+			<div class="ctn2_div">
+				<dl>
+					<dt><a href="#"><img src="img/ctn2.jpg"><a href="#"></dt>
+					<dd>
+						<p class="p1">索尼Xperia Z1三防手机超值低价！顺丰包邮！原装赠索尼原装耳机</p>
+						<p class="p2"><strong>￥1399</strong><span>￥2300</span><b>5.8折</b></p>
+						<li>剩余:<span class="red">3</span>天<span class="red">09</span>时<span class="red">11</span>分<span class="red">29</span>秒<b>395656人关注</b></li>
+					</dd>
+				
+				</dl>
+				<dl class="ctn2_dl">
+					<dt><a href="#"><img src="img/ctn2.jpg"></a></dt>
+					<dd>
+						<p class="p1">索尼Xperia Z1三防手机超值低价！顺丰包邮！原装赠索尼原装耳机</p>
+						<p class="p2"><strong>￥1399</strong><span>￥2300</span><b>5.8折</b></p>
+						<li>剩余:<span class="red">3</span>天<span class="red">09</span>时<span class="red">11</span>分<span class="red">29</span>秒<b>395656人关注</b></li>
+					</dd>
+				
+				</dl>
+			</div>
+			<div class="ctn2_div">
+				<dl>
+					<dt><a href="#"><img src="img/ctn2.jpg"></a></dt>
+					<dd>
+						<p class="p1">索尼Xperia Z1三防手机超值低价！顺丰包邮！原装赠索尼原装耳机</p>
+						<p class="p2"><strong>￥1399</strong><span>￥2300</span><b>5.8折</b></p>
+						<li>剩余:<span class="red">3</span>天<span class="red">09</span>时<span class="red">11</span>分<span class="red">29</span>秒<b>395656人关注</b></li>
+					</dd>
+				
+				</dl>
+				<dl class="ctn2_dl">
+					<dt><a href="#"><img src="img/ctn2.jpg"></a></dt>
+					<dd>
+						<p class="p1">索尼Xperia Z1三防手机超值低价！顺丰包邮！原装赠索尼原装耳机</p>
+						<p class="p2"><strong>￥1399</strong><span>￥2300</span><b>5.8折</b></p>
+						<li>剩余:<span class="red">3</span>天<span class="red">09</span>时<span class="red">11</span>分<span class="red">29</span>秒<b>395656人关注</b></li>
+					</dd>
+				
+				</dl>
+			</div>
+			<div class="ctn2_div">
+				<dl>
+					<dt><a href="#"><img src="img/ctn2.jpg"></a></dt>
+					<dd>
+						<p class="p1">索尼Xperia Z1三防手机超值低价！顺丰包邮！原装赠索尼原装耳机</p>
+						<p class="p2"><strong>￥1399</strong><span>￥2300</span><b>5.8折</b></p>
+						<li>剩余:<span class="red">3</span>天<span class="red">09</span>时<span class="red">11</span>分<span class="red">29</span>秒<b>395656人关注</b></li>
+					</dd>
+				
+				</dl>
+				<dl class="ctn2_dl">
+					<dt><a href="#"><img src="img/ctn2.jpg"></a></dt>
+					<dd>
+						<p class="p1">索尼Xperia Z1三防手机超值低价！顺丰包邮！原装赠索尼原装耳机</p>
+						<p class="p2"><strong>￥1399</strong><span>￥2300</span><b>5.8折</b></p>
+						<li>剩余:<span class="red">3</span>天<span class="red">09</span>时<span class="red">11</span>分<span class="red">29</span>秒<b>395656人关注</b></li>
+					</dd>
+				
+				</dl>
+			</div>
+					 <div class="ctn2_div1">
+						<div id="box">
+							<ul id="list">
+								<li><img src="img/ctn2.jpg" /></li>
+								<li><img src="img2/kansha.jpg"/></li>
+								<li><img src="img2/lunbo.jpg" /></li>
+							</ul>
+							<ul id="list2">
+								<li style="background: red;">1</li>
+								<li>2</li>
+								<li>3</li>
+							</ul>
+		                </div>
+						<dl>
+							<dt><b>热门专题</b></dt>
+							<dd>
+								<li><a href="#"><img src="img2/zhuanti.jpg"></a></li>
+								<li><a href="#"><img src="img2/zhuanti1.jpg"></a></li>
+								<li><a href="#"><img src="img2/zhuanti2.jpg"></a></li>
+							
+							</dd>
+						
+						
+						</dl>
+						<dl class="ctn2_div1_dl">
+							<dt><b>Z团解疑</b></dt>
+							<dd>
+								<li><a href="#"><img src="img2/jieyi.jpg"/> 魅族mx5别的地方没货为什么z团有货呢</a></li>
+								<li><a href="#"><img src="img2/jieyi.jpg">订单号:2015070923550823158160您给检查一下是否发货了 物流信息可以发给我吗  谢谢</a></li>
+								<li><a href="#"><img src="img2/jieyi.jpg">订单号:2015070923550823158160您能把商家的联系号码给我吗？联系不上 查不到发货记录 </a></li>
+								<p><a href="#">查看更多</a></p>
+							</dd>
+						
+						
+						
+						</dl>
+						<ul class="ctn2_div1_dl1">
+							<dt><b>大家都看啥</b></dt>
+							<dd>
+							<b>
+								 <p class="dp">3D BOX开启Z度空间，四色可选 尾款支付页面
+								 </p>
+								 <p class="db1"><a href="#"><img src="img2/kansha.jpg"><span>￥1887<br>3809人预览</span></a></p>
+							 </b>	
+							<b>
+							     <p class="dp">3D BOX开启Z度空间，四色可选 尾款支付页面
+							     </p>
+							     <p class="db1"><a href="#"><img src="img2/kansha1.jpg"><span>￥1887<br>3809人预览</span></a></p>
+							 </b>	
+									
+							<b>
+							    <p class="dp">3D BOX开启Z度空间，四色可选 尾款支付页面
+							    </p>
+							    <p class="db1"><a href="#"><img src="img2/kansha2.jpg"><span>￥1887<br>3809人预览</span></a></p>
+							 </b>	
+								
+								
+							
+							
+							</dd>
+						
+						</ul>
+						
+				</div>
+			
+		</div>
+		<div>
+			<ul></ul>
+		</div>	
+		<div class="tuangou">
+		<ul class="tuangou-ul">
+			<li>数码团购</li>
+			<li>购物团购</li>
+			<p></p>
+		</ul>
+		<ul class="tuangou-ul1">
+			<li>手机通讯团购</li>
+			<li>数码影像/视听团购</li>
+			<li>笔记本电脑团购</li>
+			<li>电脑外设团购</li>
+			<li>DIY主机配件团购</li>
+			<li>简单/其他团购</li>
+			<li>智能生活团购</li>
+		</ul>
+	
+	</div>
+	</div>
+	
+	
+	<div id="bottom">
+		<img src="img2/xinwen.jpg" class="img11">
+		<img src="img2/xinwen1.jpg" class="img22">
+		<ul class="bottom_ul">
+			<li class="bottom_padding_no">
+				<dl>
+					<dt>帮助中心</dt>
+					<dd><a href="#">购物指南</a></dd>
+					<dd><a href="#">优惠券红包</a></dd>
+					<dd><a href="#">常见问题</a></dd>
+					<dd><a href="#">售后服务</a></dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt>手机版Z团</dt>
+					<dd><a href="#">iphone客户端</a></dd>
+					<dd><a href="#">手机网页版</a></dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt>关注Z团</dt>
+					<dd><a href="#">往期团购</a></dd>
+					<dd><a href="#">Z团新浪微博</a></dd>
+					<dd><a href="#">Z团腾讯微博</a></dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt>商务合租</dt>
+					<dd><a href="#">媒体合作</a></dd>
+					<dd><a href="#">提供团购信息</a></dd>
+				</dl>
+			</li>
+			<li>
+				<dl>
+					<dt>公司信息</dt>
+					<dd><a href="#">关于中关村在线</a></dd>
+				</dl>
+			</li>
+			<li class="bottom_border_no">
+				<dl>
+					<dt>400-678-0068</dt>
+					<dd><a href="#">周一至周日 9:00-18:00</a></dd>
+				</dl>
+			</li>
+		</ul>
+		
+		<div class="bottom_floor">
+			<h5>&copy; 2015. 中关村在线 版权所有</h5>
+			<ul>
+				<li><a href="#">ZOL简介</a></li>
+				<li><a href="#">ZOL历程</a></li>
+				<li><a href="#">广告服务</a></li>
+				<li><a href="#">招聘（9月）</a></li>
+				<li><a href="#">互动营销</a></li>
+				<li><a href="#">品牌大全</a></li>
+				<li><a href="#">站点地图</a></li>
+				<li><a href="#">联系方式</a></li>
+				<li><a href="#">RSS订阅</a></li>
+				<li><a href="#">反馈/纠错</a></li>
+			</ul>
+		</div>
+		
+	</div>
+	<!--登录弹窗-->
+	<div class="box">
+		<div class="head"><span class="headspan1">登录ZOL商城</span><b class="headspan2">&times;</b></div>
+		<form>
+		    <span class="tishi"></span>
+			<h3>账号登陆</h3>
+			<input type="text" class="user" placeholder="手机号/邮箱/用户名"><img src="imgs/cgo.jpg"><br>
+		    <input type="password" class="pwd" placeholder="密码"><img src="imgs/cgo.jpg"><br>
+		    <p><input type="checkbox"><label>记住登陆状态<label><a href="#">忘记密码</a></p>
+		    <button class="btn1">登录</button>
+		</form>
+	</div>
+	
+	</body>
+</html>

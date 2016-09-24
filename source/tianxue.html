@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			.hedui{width:990px;border:1px solid #CCCCCC;padding-bottom: 2px;margin:0 auto;}
+			.hedui>p{height:44px;font-size: 20px;line-height:44px;background: #f8f8f8;padding:6px 25px 6px 25px;width: 938px;margin:1px 1px 15px 1px;}
+			.xinxxiugai{width:965px;height:100px;padding-top:10px;padding-left:25px;}
+		    .xinxxiugai dt{font-size: 16px;line-height: 28px;font-weight: 800;color:#333333;}
+			.xinxxiugai dt span{color: #3366cc;font-size: 12px;}
+			.xinxxiugai dd{padding-left:28px;font-size:10px;}
+			.xinxxiugai dd ul li{line-height: 20px;font-weight: 500px;color: #666666;}
+			.red-border{border: 1px solid #e02d2d;width:986px;background: #FFFFFF;clear: both;}
+			.red-border p{font-size: 16px;line-height:28px;padding:6px 25px 6px 25px;width: 938px;margin:1px 1px 15px 1px;font-weight: 800;color:#333333;}
+			.red-border >p span{color: #3366cc;font-size: 12px;}
+			.red-border >dl >dt{padding-left:28px;font-size:12px;font-weight: 500px;}
+			.red-ctn{width:920px;height:30px;line-height: 30px;background: #ffefef;margin:0 20px;}
+			.red-ctn span{margin-left:42px;font-weight: 500px;color:#FF0000;}
+			.red-ctn1 dt,.red-ctn1 dd{float:left;height:62px;}
+			.red-ctn1 dt{width:103px;margin-left: 60px;}
+			.red-ctn1 dd{width:778px;}
+			.red-ctn1 dt,.red-ctn1 dd li{line-height: 20px;color: #999999;}
+			.red-ctn1 {height:100px;}
+			.red-ctn1 p input{height:34px;}
+			.input1{width:122px;background: #e02d2d;color:#FFFAF2;text-align: center;line-height: 24px;margin-right: 10px;}
+			.input2{background: #f8f8f8;width:82px;color:#000000}
+			.qindan{height:370px;}
+			.qindan p{font-size: 16px;line-height:28px;padding:6px 25px 6px 25px;width: 938px;margin:1px 1px 15px 1px;font-weight: 800;color:#333333;}
+			.qindan p span{color: #3366cc;font-size: 12px;}
+			.liaobiao1{background:#f8f8f8;width:950px}
+			.liaobiao1{width:950px;line-height:28px;;margin:0 20px;height:29px;}
+			.liaobiao1 li{float: left;background:#f8f8f8;height:28px}
+			.lb-li1{width:467px;text-align:center;}
+			.lb-li2{width:120px;text-align:center;}
+			.lb-li3{width:238px;text-align:center;}
+			.lb-li4{width:123px;text-align:center;}
+			.table-ctb{min-height:80px;margin-left:20px}
+			.tab-tr{border-bottom: 1px dashed #e6e6e6;border-top: 1px dashed #e6e6e6;}
+		    .lb-li1 span{color: #3366cc;vertical-align: middle;position: relative;top:-40px;left:5px;}
+			.tianxue-ctn ul li{width:365px;height:30px;background: #F8F8F8;color:#333333;margin-top:10px;padding:0 10px;line-height: 30px;}
+			.beizhu{width:300px;height: 22px;}
+			.tianxue-ctn ul{margin-left:40px;}
+			.tianxue-ctn b{width:204px;height:30px,background: #ffefef;border:1px solid #f78686;font-size: 14px;display: block;font-style: normal;text-align: center;float:right;line-height: 30px;margin-right: 25px;}
+			.tianxue-ctn b span{color:#3366cc;}
+			.jieshuan{width:950px;height:62px;clear: both;background: #F8F8F8;line-height: 62px;}
+			.jieshuan p{line-height: 62px ;color:#333333;float: left;width:550px;font-size: 12px;}
+			.jieshuan p span{color:#333333;}
+			.jieshuan ul {float:right;}
+			.jieshuan-li{width:200px;color:#333333;font-weight: 600;}
+			.jieshuan-li span{color:#cc0000;font-size: 17px;}
+			.jieshuan ul li{float: left;}
+			.jieshuan-li1{width:134px;}
+			.jieshuan-li1 input{width:136px;height:40px;line-height: 40px;text-align: center;color: #999999;}
+
+ 
+		</style>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/comon.css" />
+		<script src="js/jquery-1.12.0.js"></script>
+		<script src="js/mycookie.js"></script>
+		<script>
+			$(function(){
+			var user=getCookie("user");
+			
+			var index1=getCookie("index")
+			
+			$(".top-center div li").find("span").html(user);
+			
+			$(".jieshuan-li1").on("click",function(){
+					location.href="chenggongxiadan.html";
+				    e.preventDefault();
+				})
+				
+				var odl=$(".dind-top dl").eq(1);
+					odl.find("li").css("background","#e02d2d")
+				    odl.find("li").find("span").css("background","#e02d2d");
+				    odl.find("dd").css("color","#e02d2d");
+				 var zjia=getCookie("zjia")
+				 
+				var zarr=JSON.parse(zjia);
+				var str = getCookie("arr");
+				var arr=JSON.parse(str);
+//				<tr class="tab-tr">
+//						<td  class="lb-li1"><img src="imgs/liebiao.jpg"><span>索尼  Xperia Z1三防手机超值低价，顺丰包邮！原装赠送索尼原装耳机</span></td>
+//						<td  class="lb-li2">￥199.00</td>
+//						<td  class="lb-li3">索尼  Xperia Z1三防手机超值低价，顺丰包邮！原装赠送索尼原装</td>
+//						<td  class="lb-li4">￥199</td>
+//						
+//					</tr>
+				var sum=0;
+				$.each(arr, function(idx,item) {
+					if(idx==index1){
+					var table=$("table");
+					 var tr=$("<tr/>").appendTo(table).addClass("tab-tr");  
+					var trtd1=$("<td/>").appendTo(tr).addClass("lb-li1")
+					var trtd2=$("<td/>").addClass("lb-li2").appendTo(tr);
+					var trtd3=$("<td/>").addClass("lb-li3").appendTo(tr);
+					var trtd4=$("<td/>").addClass("lb-li4").appendTo(tr);
+						trtd1.html($("<img/>").attr("src",item.img).css({"width":"89px","height":"55px"}))
+					$("<span>").text(item.ctn).appendTo(trtd1);
+					trtd2.html(item.price);
+					trtd3.html(item.ctn);
+					//trtd4.html(zarr[idx])
+					//sum+=parseInt(item.price.slice(1));
+					trtd4.html("￥"+zarr)
+				    }
+				});
+				
+				$(".jieshuan-li").find("span").html("￥"+zarr);
+				
+				addCookie("sum",JSON.stringify(zarr),1)
+			})
+		
+		
+		</script>
+	</head>
+	<body>
+		<div class="top-backcolor">
+			<div class="top-center">
+				<ul>
+					<li><a href="#"> ZOL商城</a></li>
+					<li><a href="#">收藏</a></li>
+					<li><a href="#">订阅团购推荐<img src="img1/z.png"></a></li>
+					<li id="clear-right">客服电话:<span>400-678-0068</span></li>
+				</ul>
+				<div>
+					<li>您好，<span>5454552415</span></li>
+					<li><a href="index.html">退出</a></li>
+					<li id="clear-right"><a href="dindan.html">我的订单</a></li>
+				</div>
+			</div>
+		
+		</div>
+		<div class="dind-top">
+			<img src="imgs/img1.jpg">
+			<div>
+				<dl>
+					<dt><li><span>1</span></li></dt>
+					<dd>1核对商品信息</dd>
+				</dl>
+				<dl>
+					<dt><li><span>2</span></li></dt>
+					<dd>2填写订单信息</dd>
+				</dl>
+				<dl>
+					<dt><li><span>3</span></li></dt>
+					<dd>成功提交订单</dd>
+				</dl>
+			
+			</div>
+		
+		</div>
+		<div class="hedui clearfix">
+			<p>填写并核对订单</p>
+			<dl class="xinxxiugai">
+				<dt>收货人的信息  <span>修改</span></dt>
+				<dd>
+					<ul>
+						<li>fel 141241132132 vdfd@qq.com</li>
+						<li>上海 上海市 静安区  vdf</li>
+					</ul>
+				</dd>
+			
+			</dl>
+			<div class="red-border clearfix">
+				<p id="ip">配送方式  <span>保存配送方式</span></p>
+				<dl>
+					<dt class="red-ctn"><input type="radio">快递:<span>免费</span>(发货两天送到)</dt>
+					<dd>
+						<dl class="red-ctn1">
+							<dt>温馨提示:</dt>
+							<dd>
+								<ul>
+									<li>1 聚合物IT人家问IE集团认为给偶尔加哦如果他 </li>
+									<li>2 韩国看人家可根据瑞丰国际狂热交付给内容覆盖</li>
+									<p><input  type="button" value="保存配送方式" class="input1"><input type="button" value="取消" class="input2"></p>
+								</ul>
+							</dd>
+						</dl>
+					</dd>
+				</dl>
+			
+			</div>
+			<div class="qindan">
+				<p>商品清单   <span>返回后购物车修改</span></p>
+				<ul class="liaobiao1">
+					<li class="lb-li1">商品</li>
+					<li class="lb-li2">单价(元)</li>
+					<li class="lb-li3">典型和数量</li>
+					<li class="lb-li4">总价(元)</li>
+					
+				</ul>
+				<table  class="table-ctb">
+					<!--<tr class="tab-tr">
+						<td  class="lb-li1"><img src="imgs/liebiao.jpg"><span>索尼  Xperia Z1三防手机超值低价，顺丰包邮！原装赠送索尼原装耳机</span></td>
+						<td  class="lb-li2">￥199.00</td>
+						<td  class="lb-li3">索尼  Xperia Z1三防手机超值低价，顺丰包邮！原装赠送索尼原装</td>
+						<td  class="lb-li4">￥199</td>
+						
+					</tr>-->
+				</table>
+				<div class="tianxue-ctn">
+					<ul>
+						<li>订单备注 <input type="text" class="beizhu"></li>
+						<li><input type="checkbox"> 需要发票(额外支付￥33.00)</li>
+						<li><input type="checkbox"> 使用优惠卷</li>
+					</ul>
+					<b>你需要保存<span>配送方式</span>,在提交订单</b>
+				</div>
+				<div>
+				<div class="jieshuan">
+					<p><span>寄送到至:</span>fel 141241132132 vdfd@qq.com 上海 上海市 静安区  vdf</p>
+					<ul>
+						<li class="jieshuan-li">合计(不含运费):<span>￥0.00</span></li>
+						<li class="jieshuan-li1"><input type="button" value="提交订单"></li>
+					</ul>
+				
+				</div>
+					
+			</div>
+		</div>
+		</div>
+		<div class="foot">
+		<div class="border-red"></div>
+        	<div class="foot-ctn">
+        		<dl>
+        			<dt>帮助中心</dt>
+        			<dd>
+        				<li>购物指南</li>
+        				<li>优惠卷红包</li>
+        				<li>常见问题</li>
+        				<li>售后服务</li>
+        			</dd>
+        		</dl>
+        		<dl>
+        			<dt>手机版Z团</dt>
+        			<dd>
+        				<li>iphone客户端</li>
+        				
+        			</dd>
+        		</dl>
+        		<dl>
+        			<dt>关注Z团</dt>
+        			<dd>
+        				<li>Z团新浪微博</li>
+        				<li>Z团腾讯微博</li>
+        				
+        			</dd>
+        		</dl>
+        		<dl>
+        			<dt>商务合作</dt>
+        			<dd>
+        				<li>媒体合作</li>
+        				
+        			</dd>
+        		</dl>
+        		<dl>
+        			<dt>公司信息</dt>
+        			<dd>
+        				<li>关于中关村在线</li>
+        			
+        			</dd>
+        		</dl>
+        		<dl class="odl-noborder">
+        			<dt>客服电话</dt>
+        			<dd>
+        				<li class="oli-fontred">400-678-0086</li>
+        				<li>周一致周日 9:00-18:00</li>
+        				
+        			</dd>
+        		</dl>
+        	
+        	
+        	</div>
+        	<div class="foot-bottom">
+	        		<div class="foot-bottom-left">
+	        			<p>@2015中关村在线  版权所有</p>
+	        		</div>
+	        		<ul>
+	        			<li>ZOL简介</li>
+	        			<li>ZOL历程</li>
+	        			<li>广告服务</li>
+	        			<li>招聘(9月)</li>
+	        			<li>互动营销</li>
+	        			<li>品牌大全</li>
+	        			<li>站点地图</li>
+	        			<li>联系方式</li>
+	        			<li>RSS订阅</li>
+	        			<li style="color: #ff0000;">反馈/纠错</li>
+	        		
+	        		</ul>
+        	</div>
+        
+        </div>
+		
+	</body>
+</html>

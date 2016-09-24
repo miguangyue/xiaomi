@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+					*{padding:0;margin:0;}
+			ul li{list-style: none;}
+			a{text-decoration: none;}
+			.top-backcolor{background: #efefef;height:18px;padding:12px 0;}
+   			.top-center{margin: 0 auto;height:30px;width:990px}
+   			.top-center ul{float: left;line-break: 18px;}
+   			.top-center ul span{color: #d20052;}
+   			.top-center ul a{color: #000000;font-size:16px}
+   			.top-center div{float:right}
+   			.top-center div li a{color: #000000;}
+   			.top-center div li span{color: #6666d2;}
+   			.top-center ul li{height:18px;padding:0 10px;float:left;font-size:18px;border-right: 1px solid #d2ccd2;display: inline-block;}
+			.top-center div li{float: left;padding:0 10px;border-right:1px solid #d2ccd2 ;list-style: none;}
+			#clear-right{border-right:none;}
+			/*sousuolan*/
+			.shousuolan {width:990px;height:90px;margin:0 auto;clear: both;}
+			.shousuolan-center{height: 36px;padding: 25px 0;position: relative;left: 172px;}
+			.shousuolan-center .inp1{width:276px;border: 1px solid #b10000;height:34px;}
+			.shousuolan-center .inp2{width:90px;height: 36px;background: #b10000;color: #FFFFFF;}
+			.shousuolan-left{float: left;}
+			.shousuolan-right{float: right;display: block;position: relative;top:-86px}
+			.car {width:990px;margin:0 auto}
+			.car-title{height:50px;line-height:50px;font-size:12px;}
+			.car-title span{color:#666666;font-size:12px;}
+			.car-left{width:453px;height:392px;float:left;}
+			.car-right{width:525px;height:392px;float:right;margin-left:10px;}
+			.car-left ul{height:50px;}
+			.car-left ul li{width:88px;line-height:50px;float:left;font-size:12px;}
+			.car-left ul li a{color:#666666;}
+			.car-left ul li img{vertical-align: middle;}
+			.car-right-1{height:38px;color:#333333;line-height:38px;font-size:22px;}
+			.car-right-2{font-size:14px;line-height: 20px;color:#666666}
+			.car-right-3{width:195px;height:20px;padding:0 5px;border:1px solid #ff3333;font-size:10px;line-height: 20px;text-align: center;color:#ff3333}
+			.car-right-ul{background:#f7f7f7;height:77px;margin-top:18px;line-height:77px;padding-left:20px;}
+			.car-right-ul li{float: left;margin-right: 12px;}
+			.car-right-li-1{color:#f12721;font-size:20px;}
+			.car-right-li-1 span{font-size:30px;}
+			.car-right-li-2{font-size:15px;color:#666666;text-decoration: line-through;position: relative;top:5px;}
+			.car-right-li-3{background: #f12721;width:54px;height:23px;font-size:15px;display: block;position: relative;top:28px;line-height: 23px;text-align: center;color: #FFFFFF;}
+			.car-right-ul-1{height:35px;border-bottom: 1px dashed darkgray;border-top: 1px dashed darkgray;line-height:35px;}
+			.car-right-ul-1 li{color:#666666;font-size:12px;}
+			.oul-li1{float:left;margin-right: 60px;width:174px;border-right: 1px solid darkgray;}
+			.qiangoubtn{width:220px;height:50px;background: #ce1a1b;text-align:center;line-height: 50px;margin-top: 20px;color:#FFFFFF;font-weight: bold;}
+			.shenyu{height:16px;padding-top:14px;font-size:14px;color:#999999;}
+			.shenyu span{color:#f25451;}
+			.zicandan-ctn{background: #fef5e6;padding-top: 30px;padding-bottom: 10px;}
+        
+           /*伪类*/
+	 	
+		 .center-ctn{width:990px;margin:0 auto;margin-top: 20px;}
+		 .center-left{width:705px;background: #FFFFFF;border: 1px solid #e5d6c1;padding:20px 20px 0 0px;} 
+		 .cente-caidan{height:50px;background:#FAFAFA;border: 1px solid #e6e6e6;}
+		 .cente-caidan li{line-height: 50px;padding:0 0 0 16px;float: left;}
+		 .cente-caidan li a{color:#333333;font-weight: 600;}
+		 .odl-1{height:123px;margin-top:32px;background: #fafafa;border:1px solid #e5d6c1}
+		 .odl-1 >dt,.odl>dd{float:left}
+		 .odl-1>dd{padding-top:16px;}
+		 .odl-1>dd dt{padding-bottom: 10px;font-weight:800;}
+		 .odl-1>dd dd li{line-height: 20px;font-size:14px;color:#666666}
+		 .odl-1>dd dd li span{color:#f12721;font-weight:500;}
+		 .odl-2,.odl-3,.odl-4{margin-top:44px;}
+		 .odl-2 dt,.odl-3 dt,.odl-4 dt{width:76px;height:34px;border-bottom: 1px solid #ff3333;font-size:16px;color:#ff3333;line-height:34px;}
+		 .odl-2 dd,.odl-4 dd{padding-top:10px;border-top:1px solid #ebebeb;padding-left:10px;}
+		 .odl-2 dd li{line-height:24px;font-size:14px;color:#333333;font-weight:500;}
+		 .odl-3 dd{background:#fffde5;font-size:14px;color:#333333;font-weight:500;padding-left:10px;padding-top:10px;padding-bottom: 10px;}
+		 .odl-1 li,.odl-2 li,.odl-4{list-style: none;}
+		 table{border: 1px solid darkgray;width:705px;margin-left:2px;border-left: none;color:gray}
+		 table td{height:50px;border: 1px solid darkgray;border-left: none;padding-left:20px;}
+		 table td img{vertical-align: middle;}
+		 .xiaobiaoti,.xiaobiaoti1,.xiaobiaoti2,.xiaobiaoti3{height:50px;margin-top:30px;line-height: 50px;text-align: center;color:#6b1e84;font-weight:800;font-size:40px;}
+		 .xbt ul li{width:115px;height:122px;border:1px solid #333333;float: left;margin-left:50px;}
+		  .xiaobiaoti1{clear: both;position: relative;}
+		 .wenxin dl{margin-left: 16px;float: left;}
+		 .wenxin dl dd{color:#c40d1f;font-size:16px;}
+		 .wenxin ul{font-size:10px;color:gray;}
+		 .wenxin ul span{color:red}
+		 .odl-21 li{background: #f7f7f7;clear: both;}
+		 .odl-21 li span{float: right;}
+		 #odl-22 li{height:94px;float: left;line-height:94px;text-align: center;}
+		 #odl-22 dd{height:92px;padding:20px 0;}
+		 #odl-22 li input {width:65px;height:26px;background: red;color: #FFFFFF;position: relative;top:-70px;}
+		 .odiv{border:1px solid #808080;padding-left:16px;min-height:255px;margin-top: 10px;}
+		 .odiv p{height:55px;line-height:55px;font-size:14px;font-weight: 200px;}
+		 .odiv ul li .span-red{color:red;font-weight:500px;float:left;}
+		 .span-right{float:right;color: gray;}
+		 .odiv dl{width:160px;font-size:12px;float: left;margin-left:5px;}
+		 .odiv dl img{width:160px;}
+		 
+		 .center-right{width:228px;min-height: 1480px;}
+		 .center-left{float:left}
+		 .center-right{float: right;}
+		 .center-right .center-shi{margin-top: 10px;height:397px;border: 1px solid #d9c7a7;}
+		 .center-shi dt{height:36px;line-height:36px;padding-left:14px;font-weight: bolder;border-bottom: 1px solid #d9c7a7;}
+		 .margin-top{position: relative;top:40px;display: block;}
+		  .ctn2_div1_dl{height:296px;padding:0 5px;margin-top:60px ;border:1px solid #d9c7a7;}
+		  .ctn2_div1_dl dt{height:36px;line-height:36px;padding-left:14px;font-weight: bolder;border-bottom: 1px solid #d9c7a7;}
+		  .ctn2_div1_dl dd li{height:60px;border-bottom: 1px dashed gray;font-size:14px;line-height: 20px;padding-top: 5px;}
+		  .ctn2_div1_dl dd li a{color:#000000;font-size:13px;}
+		  .ctn2_div1_dl dd p{height:60px;line-height: 60px;text-align: center;}
+		  .ctn2_div1_dl dd p a{color:#3366cc;font-size:14px}
+		  .ctn2_div1_dl1 {height:512px;padding:0 5px;border: 1px solid #d9c7a7;margin-top: 20px;}
+		  .ctn2_div1_dl1 .dp{line-height: 20px;padding-top:5px;height:54px;font-size:14px;font-weight: normal;}
+		  .ctn2_div1_dl1 dd b{padding-bottom: 10px;border-bottom: 1px dashed gray;display: inline-block;}
+		  .ctn2_div1_dl1 dt{height:36px;line-height: 36px;padding-left: 10px;border-bottom:1px solid #d9c7a7 ;}
+		  .ctn2_div1_dl1 dd .db1 img{vertical-align: middle;float: left;}
+		  .ctn2_div1_dl1 dd .db1 span{height:53px;;display: block;float: left;line-height:20px;padding-top: 22px;margin-left: 10px;} 
+		  .ctn2_div1_dl1 p{height:40px;line-height:40px;text-align: center;font-size:16px;}
+		  .ctn2_div1_dl1 p a{color:#3366cc;}
+		  .ctn2_div1_dl1 dd .db1 .id-black{color:#000000;font-size:14px;}
+		   .ctn2_div1_dl1 dd .db1 .jia-red{color:#FF0000;font-size:10px;}
+		   
+		     
+					 /* 导航   */
+      #nav{
+      	width: 100%;
+      	height: 44px;
+      	background-color: #b20000; 
+		
+      }
+      #nav_1{
+      	width: 990px;
+      	height: 42px;
+      	margin: 0 auto;
+      	font-size: 15px;
+        
+      }
+      #nav_1 ul li{
+      	float: left;
+      	height: 42px;
+      	
+      	text-align: center;
+      	line-height: 42px;
+      }
+       #nav_1 ul li a{
+       	   display: block;
+       	   padding: 0 15px;
+       	   color: #fff;
+       }
+        #nav_1 ul li a:hover{background-color: #1c1c1c;}
+       #nav_1_right{
+       	   color: #fff;
+       	   display: block;
+       	   width: 90px;
+       	   height: 16px;
+       	   float: right;
+       	   padding-top: 12px;
+       	   padding-right: 12px;
+       	   position: relative;
+       	   left:250px;
+       } 
+        #box {
+				width: 232px;
+				height: 186px;
+				position: relative;
+				overflow: hidden;
+				margin: 10px auto;
+			}
+			
+			#list {
+				height: 186px;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			#list li {
+				width: 232px;
+				height: 186px;
+				float: left;
+			}
+			
+			#list img {
+				width: 232px;
+				height: 186px;
+			}
+			
+			#list2 {
+				width: 70px;
+				height: 15px;
+				position: absolute;
+				right: 20px;
+				bottom: 20px;
+			}
+			
+			#list2 li {
+				width: 15px;
+				height: 15px;
+				background: #fffff;
+				border: 1px solid black;
+				float: left;
+				margin-left: 5px;
+				text-align: center;
+				line-height: 15px;
+				cursor: pointer;
+			}
+		</style>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/jquery.elevateZoom-3.0.8.min.js" ></script>
+		<script src="js/mycookie.js"></script>
+		<script src="js/day19-move.js"></script>
+		<script>
+		  function showBtn(allBtn, index) {
+
+			// 清空所有按钮
+			for (var j = 0; j < allBtn.length; j++) {
+				allBtn[j].style.background = "#ffffff";
+			}
+			    allBtn[index].style.background = "red";		
+			}
+	 onload = function() {
+	var oList = document.getElementById("list");
+	
+	oList.innerHTML += oList.innerHTML;
+	
+	var allLi = oList.getElementsByTagName("li");
+	
+	// 存放切换按钮的ul
+	var oList2 = document.getElementById("list2"); 
+	//  所有按钮
+	var allLi2 = oList2.getElementsByTagName("li");
+	
+	
+	
+	// 图片的宽度
+	var width = allLi[0].offsetWidth;
+	var height = allLi[0].offsetHeight;
+	
+	// 改变list的宽度，使得li可以水平浮动
+	oList.style.width = (allLi.length * width) + "px";
+
+
+	// 思路：
+	//   (1) 定时更新
+	//   (2) 点击按钮更新图片
+	//   (3) 上一页、下一页需要考虑当前是否在滚动
+	
+	var t = 1000;
+	var timer = setTimeout(move, t);
+	
+	// 滚动图片的下标
+	var i = 0;
+	
+	var isMoving = false;
+	
+	function move() {
+		
+		// 标志移动开始 
+		isMoving = true;
+		
+		// 滚动到下一张图片
+		i++;
+		
+		
+		var iLeft = -1 * i * width;
+		
+		// console.log("当前图片的下标：" + i);
+		
+		// 动画显示下标为i的图片
+		startMove(oList, "left", iLeft, next);
+		
+		// 当前要显示按钮的下标
+		var index = i;
+		if (i >= allLi.length/2) {
+			index = 0;
+		}
+		
+		// 自定义函数，显示下标为 index 的图片
+		showBtn(allLi2, index);
+	}
+	
+	function next() {
+		if (i >= allLi.length / 2) {
+			i = 0;
+			// 瞬间回到第0张
+			oList.style.left = "0px";
+		}
+		
+		timer = setTimeout(move, t);
+		
+		// 标志移动结束
+		isMoving = false;
+	}
+	
+	// 遍历所有按钮，给每个按钮添加点击事件处理函数，实现点击切换效果
+	for (var j = 0; j < allLi2.length; j++) {
+		// 保存下标
+		allLi2[j].xxx = j;
+		
+		allLi2[j].onclick = function() {
+			
+			// 清除定时器
+			clearTimeout(timer);
+			
+			// 取出点击按钮的下标赋值给 i， 
+			/// 因为 move函数存在中 i++ 的操作
+			// 所以需要减1，确保下次滚动 this.xxx 这张图片上
+			i = this.xxx - 1;
+			
+			// 切换到i的【下一张】图片
+			move();
+		}
+	}
+  }
+		  $(function(){
+		  	  //执行插件函数
+		  	  var user=getCookie("user");
+		  	  $(".top-center div li").find("span").html(user);
+		  	  $(".tuichu").on("click",function(){
+		  	  		location.href="index.html";
+		  	  })
+		  		$('#zoom_01').elevateZoom({}); 
+		 		var count=0;
+		 		var str = getCookie("arr");
+					// 用于存储所有的商品
+					var arr = [];
+					if (str != "")
+					{
+						// 说明之前 cookie 中有商品的内容
+						// 取出来转换成数组
+						arr = eval(str);
+					}
+					
+					
+		  		$(".qiangoubtn").on("click",function(){
+		  			count++;
+		  			var $imgurl=$("#zoom_01").attr("src");
+		  			var car_ctn=$(".car-right-2").text();
+		  			var car_price=$(".car-right-li-1").text();
+		  			var car_rightctn=$(".car-right-1").text();
+		  			//创建日期对象
+		  			var oDate = new Date();
+				
+					// 获取日期对象的 年，月，日，时、分、秒
+					var year=oDate.getFullYear();
+					var month=oDate.getMonth();
+					var day=oDate.getDate();
+					var h = oDate.getHours();
+					var m = oDate.getMinutes();
+					var s = oDate.getSeconds();
+					var str=year+"-";
+					var str1=year;
+					
+					
+					if (month< 10)
+					{
+						str += "0";
+					}
+					str +=month+"-";
+					str1 +=month;
+					if (day< 10)
+					{
+						str += "0";
+					}
+					str +=day+" ";
+					str1 +=day;
+					if (h < 10)
+					{
+						str += "0";
+					}
+					str += h+":";
+					str1 += h;
+				
+				
+					if (m < 10)
+					{
+						str += "0";
+					}
+					str += m+":";
+					str1 += m;
+				
+				
+					if (s < 10)
+					{
+						str += "0";
+					}
+					str += s;
+					str1 += s;
+					var point={};
+					point.img=$imgurl;
+					point.title=car_ctn;
+					point.price=car_price;
+					point.strdate=str;
+					point.str1date=str1;
+					point.count=count;
+					point.ctn=car_rightctn;
+					arr.push(point);
+					addCookie("arr",JSON.stringify(arr),7);
+					alert("添加成功");
+					
+		  		})
+		  		//倒计时（调用函数）
+				var Second;
+			    var InterValObj;
+			    $(document).ready(function() {
+		    	Second = 900000;
+		    	InterValObj = window.setInterval(SetRemainTime, 1000);
+				})
+			    //封装倒计时函数
+		    function SetRemainTime() {
+		      	if (Second > 0) {
+		      		Second = Second - 1;
+		      		var second = Math.floor(Second % 60); 
+		      		var minite = Math.floor((Second / 60) % 60);
+		      		var hour = Math.floor((Second / 3600) % 24); 
+		      		var day = Math.floor((Second / 3600) / 24);
+		      		$(".shenyu").find("span").eq(0).html(day);
+		      		$(".shenyu").find("span").eq(1).html(hour);
+		      		$(".shenyu").find("span").eq(2).html(minite);
+		      		$(".shenyu").find("span").eq(3).html(second);
+		      		
+					
+				} else {
+		       		window.clearInterval(InterValObj);
+		       	}
+		    }
+			
+		  		
+		  			
+
+		  })
+			
+
+		</script>
+	</head>
+	<body>
+		<div class="top-backcolor">
+			<div class="top-center">
+				<ul>
+					<li><a href="#"> ZOL商城</a></li>
+					<li><a href="#">收藏</a></li>
+					<li><a href="#">订阅团购推荐<img src="img1/z.png"></a></li>
+					<li id="clear-right">客服电话:<span>400-678-0068</span></li>
+				</ul>
+				<div>
+					<li>您好，<span>5454552415</span></sapn?></li>
+					<li><a href="#" class="tuichu">退出</a></li>
+					<li id="clear-right"><a href="dindan.html">我的订单</a></li>
+				</div>
+			</div>
+		
+		</div>
+		<div class="shousuolan">
+		    <div class="shousuolan-left"><img src="img2/shouhou1.jpg"></div>
+			<div class="shousuolan-center">
+				<input type="text" class="inp1"><input type="button"value="搜索" class="inp2"/>
+			</div>
+			<div class="shousuolan-right">
+				<img src="img2/shouhou2.jpg">
+				<img src="img2/shouhou3.jpg">
+				<img src="img2/shouhou4.jpg">
+			</div>
+		</div>
+		<div id="nav">
+			<div id="nav_1">
+			<ul>
+				<li><a href="">首页</a></li>
+				<li><a href="">Z爆款</a></li>
+				<li><a href="">数码团</a></li>
+				<li><a href="">即将开团</a></li>
+				<li><a href="">服务保障</a></li>
+				<li><a href="">帮助中心</a></li>
+			</ul>
+			<span id="nav_1_right">最近浏览&nbsp;<img src="img1/z_2.png"/></span>
+			</div>
+		</div>
+		<div class="car">
+			<p class="car-title">笔记本电脑 <span>  &gt; 戴尔灵越15 5000(66648s)银色、蓝色可选 特惠</span></p>
+			<div class="car-left">
+				<img  id="zoom_01" src='imgs/car.jpg' data-zoom-image="imgs/car1.jpg"><span></span>
+				<ul>
+					<li><a href="#"><img src="img2/car1.jpg"> 全新正品</a></li>
+					<li><a href="#"><img src="img2/car2.jpg"> 品质保障</a> </li>
+					<li><a href="#"><img src="img2/car3.jpg"> 分享</a></li>
+					<li><a href="#"><img src="img2/car4.jpg"> 手机下单</a></li>
+				</ul>
+			</div>
+			<div class="car-right">
+				<p class="car-right-1">戴尔灵越15 5000(66648s)银色、蓝色可选</p>
+				<p class="car-right-2">15英寸大屏，睿智i5 5200U，R7 M270 4GB超大独显！唱完给类大型游戏！超精美机身，超薄便携</p>
+				<p class="car-right-3">前一百名购买用户可送优惠超值礼包</p>
+				<ul class="car-right-ul">
+					<li class="car-right-li-1">￥<span>4173</span></li>
+					<li class="car-right-li-2">￥4799</li>
+					<li class="car-right-li-3">8.6折</li>
+				</ul>
+				<ul class="car-right-ul-1">
+					<li class="oul-li1">148人购买</li>
+					<li>暂无评价</li>
+				</ul>
+				<div class="qiangoubtn">
+					立即抢购
+				</div>
+				<p class="shenyu"><img src="img2/shengyu.jpg" style="vertical-align: middle;">剩余:<span>4</span>天<span>08</span>时<span>15</span>分<span>15</span>秒</p>
+			</div>
+			
+		</div>
+		<div class="zicandan-ctn clearfix">
+			
+			<div class="center-ctn">
+				<div class="center-left clearfix">
+					<ul class="cente-caidan">
+						<li><a href="#">购买须知</a></li>
+						<li><a href="#">产品介绍</a></li>
+						<li><a href="#">产品口碑</a></li>
+						<li><a href="#">包装清单</a></li>
+						<li><a href="#">配送及售后</a></li>
+					</ul>
+					<dl class="odl-1">
+						<dt><img src="img2/center-left.jpg"></dt>
+						<dd>
+							<dl>
+								<dt>团购保障服务</dt>
+								<dd>
+									<li>商品经过ZoL严格把关，并与商家签署<span>团购保障服务协议</span></li>
+									<li>支付付款由<span>ZOL代收</span>，用户在团购签收商品<span>7天后且无团购纠纷在借款给商家</span></li>
+									<li>若商家未履行承若，ZOL商城会<span>先行陪付</span>保障消费者的权益</li>
+								</dd>
+							
+							</dl>
+						
+						</dd>
+					
+					</dl>
+					<dl class="odl-2">
+						<dt>给力推荐</dt>
+						<dd>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+						</dd>
+					
+					</dl>
+					<dl class="odl-3">
+						<dt>温馨提示</dt>
+						<dd>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							
+						</dd>
+					
+					</dl>
+					<dl class="odl-4">
+						<dt>产品介绍</dt>
+						<dd>
+							<li><img src="img2/xaingqing1.jpg" style="width:700px"></li>
+						</dd>
+					
+					</dl>
+					<table cellspacing="0">
+						<tr>
+							<td colspan="2" style="text-align: center;">主要参数</td>
+						</tr>
+						<tr>
+							<td><img src="img3/详情页.jpg"> 第五代睿智i5-5200U2.70GHZ</td>
+							<td><img src="img3/3.jpg"> 4G DDR3 1600MHZ内存</td>
+						</tr>
+						<tr>
+							<td><img src="img3/1.jpg"> 500GB硬盘</td>
+							<td><img src="img3/4.jpg"> AMD Radeon R7 M270 4GB独立显卡</td>
+						</tr>
+						<tr>
+							<td><img src="img3/2.jpg"> 15.6英寸显示器</td>
+							<td><img src="img3/5.jpg"> window 8.1操作系统</td>
+						</tr>
+					</table>
+					<p class="xiaobiaoti">强的出众</p>
+					<dl class="xbt">
+						<dt><img src="img3/6.jpg" style="width:700px"></dt>
+						<dd>
+						  <ul>
+							<li><img src="img3/7.jpg"></li>
+							<li><img src="img3/8.jpg"></li>
+							<li><img src="img3/9.jpg"></li>
+							<li><img src="img3/10.jpg"></li>
+						   </ul>
+						</dd>
+					
+					</dl>
+					<p class="xiaobiaoti1">瘦得有形</p>
+					<p><img src="img3/12.jpg" style="width:700px"></p>
+					<p class="xiaobiaoti2">丰富多彩的多媒体娱乐</p>
+					<p><img src="img3/13.jpg" style="width:700px"></p>
+					<p class="xiaobiaoti3">人性化操作</p>
+					<p><img src="img3/14.jpg" style="width:700px"></p>
+					<div class="wenxin">
+						<dl>
+							<dt><img src="img3/15.jpg"></dt>
+							<dd>温馨提示</dd>
+						</dl>
+						<ul>
+							<li><span>*</span>的格式不减肥的数据包吧双方基本GV计划计划好的女顾客的是GV可接看电视剧那倒是v受的好难打GV开始的还能对话框的速度</li>
+							<li><span>*</span>的格式不减肥的数据包吧双方基本GV计划计划好的女顾客的是GV可接看电视剧那倒是v受的好难打GV开始的还能对话框的速度</li>
+							<li><span>*</span>的格式不减肥的数据包吧双方基本GV计划计划好的女顾客的是GV可接看电视剧那倒是v受的好难打GV开始的还能对话框的速度</li>
+						</ul>
+					
+					</div>
+					<dl class="odl-2 odl-21">
+						<dt>产品口碑</dt>
+						<dd>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能<br><span>---ZOL网友</span></li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能<br><span>---ZOL网友</span></li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能<br><span>---ZOL网友</span></li>
+							
+						</dd>
+					
+					</dl>
+					<dl class="odl-2" id="odl-22">
+						<dt>消费评价</dt>
+						<dd>
+							<li style="width:455px">快来第一个评价吧</li>
+							<li style="width:249px;border-left:1px solid #E6E6E6;" >我在Z团购买过本单<br><input type="button" value="我要评价"></li>
+						</dd>
+					
+					</dl>
+					<dl class="odl-2">
+						<dt>包装清单</dt>
+						<dd>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+						</dd>
+					
+					</dl>
+					
+					<dl class="odl-2">
+						<dt>配送售后</dt>
+						<dd>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+							<li>戴尔15MD——6648S计划收入的划分及速度发货GV货到付款就不看对方尽快吧你GV空间发呆那可能</li>
+						</dd>
+					
+					</dl>
+					<dl class="odl-2">
+						<dt>Z团优势</dt>
+						<dd>
+							<img src="img3/16.jpg" style="position: relative;left:-9px;width:700px">
+						</dd>
+					
+					</dl>
+					<div class="odiv clearfix">
+						<p>看了本商品还看什么</p>
+							<dl>
+								<dt><img src="img3/17.jpg"></dt>
+								<dd class="clearfix">
+								  <ul>
+									<li>华为荣耀百润股份多少积分换别的时间</li>
+									<li><span class="span-red">￥2399</span><span class="span-right">已售出107</span></li>
+								  </ul>
+								</dd>
+							
+							</dl>
+							<dl>
+								<dt><img src="img3/17.jpg"></dt>
+								<dd class="clearfix">
+								  <ul>
+									<li>华为荣耀百润股份多少积分换别的时间</li>
+									<li><span class="span-red">￥2399</span><span class="span-right">已售出107</span></li>
+								  </ul>
+								</dd>
+							
+							</dl>
+							<dl>
+								<dt><img src="img3/17.jpg"></dt>
+								<dd class="clearfix">
+								  <ul>
+									<li>华为荣耀百润股份多少积分换别的时间</li>
+									<li><span class="span-red">￥2399</span><span class="span-right">已售出107</span></li>
+								  </ul>
+								</dd>
+							
+							</dl>
+							<dl>
+								<dt><img src="img3/17.jpg"></dt>
+								<dd class="clearfix">
+								  <ul>
+									<li>华为荣耀百润股份多少积分换别的时间</li>
+									<li><span class="span-red">￥2399</span><span class="span-right">已售出107</span></li>
+								  </ul>
+								</dd>
+							
+							</dl>
+					
+					</div>
+					
+					
+					
+					
+					
+					
+				</div>
+				<div class="center-right clearfix">
+					<div id="box">
+							<ul id="list">
+								<li><img src="img/ctn2.jpg" /></li>
+								<li><img src="img2/kansha.jpg"/></li>
+								<li><img src="img2/lunbo.jpg" /></li>
+							</ul>
+							<ul id="list2">
+								<li style="background: red;">1</li>
+								<li>2</li>
+								<li>3</li>
+							</ul>
+		                </div>
+					<dl class="center-shi">
+					<dt>热门专题</dt>
+					<dd>
+						<ul>
+							<li><a href="#"><img src="img2/lunbo.jpg"></a></li>
+							<li><a href="#"><img src="img2/lunbo1.jpg"></a></li>
+							<li><a href="#"><img src="img2/lunbo3.jpg"</a></li>
+						
+						</ul>
+	
+					</dd>
+				</dl>
+				<p class="margin-top"><img src="img2/shouhou5.jpg"></p>
+				<dl class="ctn2_div1_dl">
+					<dt><b>Z团解疑</b></dt>
+					<dd>
+						<li><a href="#"><img src="img2/jieyi.jpg"/> 魅族mx5别的地方没货为什么z团有货呢</a></li>
+						<li><a href="#"><img src="img2/jieyi.jpg">订单号:2015070923550823158160您给检查一下是否发货了 物流信息可以发给我吗  谢谢</a></li>
+						<li><a href="#"><img src="img2/jieyi.jpg">订单号:2015070923550823158160您能把商家的联系号码给我吗？联系不上 查不到发货记录 </a></li>
+						<p><a href="#">查看更多</a></p>
+					</dd>
+				</dl>
+				<ul class="ctn2_div1_dl1">
+							<dt><b>大家都看啥</b></dt>
+							<dd>
+							<b>
+								 <p class="dp">3D BOX开启Z度空间，四色可选 尾款支付页面
+								 </p>
+								 <p class="db1"><a href="#"><img src="img2/kansha.jpg"><span class="jia-red">￥1887<br><b class="id-black">3809人预览</b></span></a></p>
+							 </b>	
+							<b>
+							     <p class="dp">3D BOX开启Z度空间，四色可选 尾款支付页面
+							     </p>
+							     <p class="db1"><a href="#"><img src="img2/kansha1.jpg"><span class="jia-red">￥1887<br><b class="id-black">3809人预览</b></span></a></p>
+							 </b>	
+									
+							<b>
+							    <p class="dp">3D BOX开启Z度空间，四色可选 尾款支付页面
+							    </p>
+							    <p class="db1"><a href="#"><img src="img2/kansha2.jpg"><span class="jia-red">￥1887<br><b class="id-black">3809人预览</b></span></a></p>
+							 </b>	
+								
+							</dd>
+							<p><a href="#">换一批</a></p>
+					</ul>
+				</div>
+			
+			</div>
+		</div>
+	</body>
+</html>

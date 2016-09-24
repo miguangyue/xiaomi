@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			.cgo{width:970px;height:74px;margin:0 auto;border:1px solid #e6e6e6;padding-top:16px;padding-right:60px;}
+			.cgo dl dt,.cgo dl dd{float:left}
+			.cgo dl dt{margin-left:20px;}
+			.cgo dl dd{margin-left: 10px;}
+			.cgo1{font-size:15px;line-height: 25px;color:#333333;}
+			.cgo2{font-size:12px;color:#666666;}
+			.cgo span{margin-left:20px;}
+			.cgo span b{color:#cc0000;}
+			.cgo >p{width:164px;height:22px;background:#ff6600;margin-left:575px;color:#FFFFFF;font-size:12px;line-height: 22px;text-align: center;padding:0 7px;clear: both;position: relative;top:8px;}
+			.cgo >p span{border:8px solid #ff6600;border-left-color: transparent;border-bottom-color: transparent;border-right-color: transparent;position: relative;top:5px;left:-20px;}
+			 .car-ctnu ul{margin:0 auto;border-left: 1px solid #d9c7a7;border-top: 1px solid #D9C7A7;border-right: 1px solid #D9C7A7;padding-top:5px ;height:37px;position: relative;}
+		     .car-ctnu ul li{border-bottom: 1px solid #D9C7A7;padding:0 20px;float: left;height:33px;line-height: 33px;}
+		     /*伪类*/
+		    .car-ctnu{border:1px solid #e6e6e6;width:1030px;margin:0 auto;margin-top:10px;height:210px;}
+		     .car-ctnu ul li:hover,.yidong{border-bottom: none;border-left: 1px solid #D9C7A7;border-top: 2px solid #a60d0d;border-right: 1px solid #D9C7A7;display: block;background:#fef5e6;}
+		     .car-ctnu ul p{width:300px;border-bottom: 1px solid #D9C7A7;height:33px;float: left;position: absolute;right:0}
+		   	 .fuqian{height:80px;border-bottom: 1px dashed #e6e6e6;width:990px;margin:0 auto}
+		   	 .fuqian div p{height:52px;width:135px;}
+		   	 .fuqian div{height:80px;line-height: 80px;padding-left:25px;}
+		   	 .fuqian dl{height:80px;padding-top:20px;padding-left:415px;}
+		   	 .fuqian dl dt{width:130px;height:44px;background:#e02d2d;line-height: 44px;font-size: 14px;color:#FFFFFF;text-align: center;}
+		   	 .fuqian dl dd{width:140px;font-size: 10px;text-align: center;line-height: 28px;background: #ffefef;border:1px solid #f78686;margin-left:10px;position: relative;top:8px;}
+			.fuqian dt,.fuqian dd{float:left}
+			.wan {height:235px;width:990px;margin:0 auto;padding-left:22px;background: #f8f8f8;margin-top: 10px;}
+			.wan p{height:70px;line-height: 70px;font-size:18px;color:#333333;}
+			.wandl dt{height:15px;line-height: 15px;color:#333333;font-size: 15px;}
+			.wandl dd{line-height: 24px;font-size:15px;color:#999999;margin-top:15px;}
+			.cp{margin-top:16px;}
+			.cp{font-size:15px;}
+			.cp li{line-height: 24px;}
+			.redborder{border:1px solid #F12721}
+			  
+		   
+		</style>
+		<link href="css/reset.css">
+		<link rel="stylesheet" href="css/comon.css" />
+		<script src="js/jquery-1.12.0.js"></script>
+		<script src="js/mycookie.js"></script>
+		<script>
+			$(function(){
+			    var user=getCookie("user")
+			    $(".top-center div").find("span").html(user)
+			    var str=getCookie("sum");
+			    var money=eval(str);
+			     $(".money").html("￥"+money)
+				var odl=$(".dind-top dl").eq(2);
+					odl.find("li").css("background","#e02d2d")
+				    odl.find("li").find("span").css("background","#e02d2d");
+				    odl.find("dd").css("color","#e02d2d");
+				 $(".car-ctnu ul li").eq(1).css({"border-bottom": "none","border-left": "1px solid #D9C7A7","border-top": "2px solid #a60d0d","border-right": "1px solid #D9C7A7","display": "block","background":"#ffffff"})
+				 $(".car-ctnu ul").on("click","li",function(){
+					 $(".car-ctnu ul li").eq(1).css({"border-bottom": "1px solid #D9C7A7","border-left": "none","border-top": "none","border-right": "none","display": "block","background":"#ffffff"})
+					$(".car-ctnu ul li").css({"border-bottom": "1px solid #D9C7A7","border-left":"none","border-top":"none","border-right":"none"})
+					var index=$(this).index();
+					
+					$(".car-ctnu ul li ").eq(index).css({"border-bottom": "none","border-left": "1px solid #D9C7A7","border-top": "2px solid #a60d0d","border-right": "1px solid #D9C7A7","display": "block","background":"#ffffff"})
+				})
+				 var i=0;
+				 var fab=false
+				 $(".fuqian div p").on("click",function(){
+				 		$(this).toggleClass("redborder");
+				 		i++;
+				 		if(i%2==1){
+				 			fab=true;
+				 		}else{
+				 			fab=false
+				 			
+				 		}
+				 		
+				 })
+				 $(".fuqian dl dd").hide();
+				$(".fuqian dl dt").on("click",function(){
+					if(!fab){
+						 $(".fuqian dl dd").show();
+					}else{
+						alert("交易成功");
+						 $(".fuqian dl dd").hide();
+					}
+				})
+				
+			})
+					
+		
+		
+		</script>
+	</head>
+	<body>
+		<div class="top-backcolor">
+			<div class="top-center">
+				<ul>
+					<li><a href="#"> ZOL商城</a></li>
+					<li><a href="#">收藏</a></li>
+					<li><a href="#">订阅团购推荐<img src="img1/z.png"></a></li>
+					<li id="clear-right">客服电话:<span>400-678-0068</span></li>
+				</ul>
+				<div>
+					<li>您好，<span>5454552415</span></li>
+					<li><a href="index.html">退出</a></li>
+					<li id="clear-right"><a href="dindan.html">我的订单</a></li>
+				</div>
+			</div>
+		
+		</div>
+		<div class="dind-top">
+			<img src="imgs/img1.jpg">
+			<div>
+				<dl>
+					<dt><li><span>1</span></li></dt>
+					<dd>1核对商品信息</dd>
+				</dl>
+				<dl>
+					<dt><li><span>2</span></li></dt>
+					<dd>2填写订单信息</dd>
+				</dl>
+				<dl>
+					<dt><li><span>3</span></li></dt>
+					<dd>成功提交订单</dd>
+				</dl>
+			
+			</div>
+		
+		</div>
+		<div class="cgo">
+			<dl>
+				<dt><img src="imgs/cgo.jpg"></dt>
+				<dd>
+					<p class="cgo1">订单已提交成功，请在60分钟内完成付款(逾期自动取消)</p>
+					<p class="cgo2">订单号: 201515121251<span>应付金额: <b class="money">1425</b></span></p>
+				</dd>
+			</dl>
+			<p>扫码支付，抽200元现金红包<span></span></p>
+		
+		</div>
+		<div class="car-ctnu clearfix" >
+			<ul id="abc">
+				<li><a href="#">选择支付方式</a></li>
+				<li><a href="#">第三方支付平台</a></li>
+				<li><a href="#">银行卡在线支付</a></li>
+				<li><a href="#">信用卡快捷支付</a></li>
+				<li><a href="#">支付宝扫码支付</a></li>
+				<p></p>
+		   </ul>
+		   <div class="fuqian">
+		   		<div><p><img src="imgs/cgo2.jpg"></p></div>
+		   		<dl>
+		   			<dt>下一步</dt>
+		   			<dd><img src="imgs/cgo3.jpg">请选择支付方式</dd>
+		   		</dl>
+		   
+		   </div>
+	    </div>
+	    <div class="wan">
+	    	<p>支付常见问题</p>
+	    	<dl class="wandl">
+	    		<dt><img src="imgs/cgo4.jpg">没有开通网银如何购买</dt>
+	    		<dd>支付宝现在已经支持，有卡就能支付。<a href="#">查看支付流程</a></dd>
+	    	</dl>
+	    	<dl class="wandl cp">
+	    		<dt><img src="imgs/cgo4.jpg">银行看每天有支付金额限制怎么办</dt>
+	    		<dd>
+	    			<ul>
+	    				<li>一般情况下，我们通过银行界面支付大额订单时，或多或少喝遇到额度限制。目前解决方案有以下两种:</li>
+	    				<li>1方案一:选择储蓄卡支付</li>
+	    				<li>2方案二:修改银行卡限额    <a href="#">查看详情</a></li>
+	    			</ul>
+	    			
+	    		</dd>
+	    	
+	    	</dl>
+	    
+	    </div>
+	     <div class="foot">
+		<div class="border-red"></div>
+        	<div class="foot-ctn">
+        		<dl>
+        			<dt>帮助中心</dt>
+        			<dd>
+        				<li>购物指南</li>
+        				<li>优惠卷红包</li>
+        				<li>常见问题</li>
+        				<li>售后服务</li>
+        			</dd>
+        		</dl>
+        		<dl>
+        			<dt>手机版Z团</dt>
+        			<dd>
+        				<li>iphone客户端</li>
+        				
+        			</dd>
+        		</dl>
+        		<dl>
+        			<dt>关注Z团</dt>
+        			<dd>
+        				<li>Z团新浪微博</li>
+        				<li>Z团腾讯微博</li>
+        				
+        			</dd>
+        		</dl>
+        		<dl>
+        			<dt>商务合作</dt>
+        			<dd>
+        				<li>媒体合作</li>
+        				
+        			</dd>
+        		</dl>
+        		<dl>
+        			<dt>公司信息</dt>
+        			<dd>
+        				<li>关于中关村在线</li>
+        			
+        			</dd>
+        		</dl>
+        		<dl class="odl-noborder">
+        			<dt>客服电话</dt>
+        			<dd>
+        				<li class="oli-fontred">400-678-0086</li>
+        				<li>周一致周日 9:00-18:00</li>
+        				
+        			</dd>
+        		</dl>
+        	
+        	
+        	</div>
+        	<div class="foot-bottom">
+	        		<div class="foot-bottom-left">
+	        			<p>@2015中关村在线  版权所有</p>
+	        		</div>
+	        		<ul>
+	        			<li>ZOL简介</li>
+	        			<li>ZOL历程</li>
+	        			<li>广告服务</li>
+	        			<li>招聘(9月)</li>
+	        			<li>互动营销</li>
+	        			<li>品牌大全</li>
+	        			<li>站点地图</li>
+	        			<li>联系方式</li>
+	        			<li>RSS订阅</li>
+	        			<li style="color: #ff0000;">反馈/纠错</li>
+	        		
+	        		</ul>
+        	</div>
+        
+        </div>
+	</body>
+</html>

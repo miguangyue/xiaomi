@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		   *{margin:0;padding: 0;}
+		    ul,li{list-style: none;}
+		    a{text-decoration: none;}
+		  /*  top */
+			.top{background: #efefef;height:30px}
+			.top-ctn{width: 990px;margin:0 auto}
+		    .top-ctn1{line-height: 30px;float: left;}
+		    .top-ctn1 span {margin-left: 10px;}
+		     .top-ctn ul{float: right;height:30px;line-height: 30px;padding-top: 7.5px;}
+		     .top-ctn ul li{float:left;padding: 0 15px;line-height:15px;border-left: 1px solid #906690;}
+		     #oli {border-left: none;}
+		     .top-ctn ul li a{color:#666666}
+		     .top-ctn label{color:#666666;}
+		     .top-ctn ul li span{color:#b50d5a;}
+		   /*  搜索框*/
+		     .sousuo{margin:0 auto;width:990px;height:90px;}
+		     .sousuo span,.sousuo a{display: block;height:90px;line-height: 90px;float:left}
+		     .sousuo span{margin-right: 33px;}
+		     .sousuo-btn {width:272px;line-height: 90px;float:left;position: relative;top:20px}
+		     .sousuo-btn input{height:30px;width:220px;border: 1px solid #d9c7a7;float:left}
+		     .sousuo-btn button{height:30px;width:50px;background: #bc0f0f;float:right}
+		     /*购物车左边部分*/
+		     .box-ctn{background-color:#fef5e6;}
+		     .car{width:990px;margin:0 auto;padding-top: 20px;min-height: 520px;}
+		     .car .car-ctn{width:729px;padding:24px 10px 0 10px;background:#FFFFFF;min-height:375px;}/*850px*/
+		     .car .car-anbo{width:226px;margin-left: 12px;border: 1px solid #d9c7a7;height:434px;}
+		     .car-ctn{float: left;}
+		     .car-anbo{float:right;}
+		     .car-ctn ul{width:727px;border-left: 1px solid #d9c7a7;border-top: 1px solid #D9C7A7;border-right: 1px solid #D9C7A7;padding-top:5px ;height:37px;position: relative;}
+		     .car-ctn ul li{border-bottom: 1px solid #D9C7A7;padding:0 20px;float: left;height:33px;line-height: 33px;}
+		     /*伪类*/
+		     .car-ctn ul li:hover,.yidong{border-bottom: none;border-left: 1px solid #D9C7A7;border-top: 2px solid #a60d0d;border-right: 1px solid #D9C7A7;display: block;background:#fef5e6;}
+		     .car-ctn ul p{width: 310px;border-bottom: 1px solid #D9C7A7;height:33px;float: left;position: absolute;right:0}
+		    /* 我的全部订单*/
+		     table{width: 727px;font-size:14px;}
+		     table input{background: #ff9200;width:62px;}
+		     table p,table a{color: #0666cc;}
+		     table th{height:50px;text-align: center;vertical-align: middle;}
+		     table .otr1{height:40px;background: #fefbf9;line-height: 40px;border: 1px solid darkgray;}
+		     .otr1_left{text-align: left;}
+		     .otr1_center{text-align: center;}
+		     .otr1_right{text-align: right;}
+		     .otr2{border:1px solid darkgray}
+		     .otr2 td{text-align: center;}
+		     .otr2 td{padding:10px;background:#fefbf9;border: 1px solid #808080;}
+		     .otr2 .otr2_middle img{vertical-align: middle;}
+		     .otr2 .otr2_middle span{float: right;border-right: none;color: #0666cc;}
+		     .table-ctn >p{position: relative;top:30px;left: 516px;height:41px}
+		     .table-ctn >p span{display: block;background: #A60D0D;width:45px;height:41px;text-align: center;line-height: 39px;}
+		     .table-ctn >p img,.table-ctn >p span{float: left;}
+		     /*我的红包*/
+		     .table-ctn1 {height:120px ;width: 727px;border: 1px solid #d9c7a7;margin-top:16px;}
+		     .honbao p{height:35px;padding: 0 0 0 12px;line-height: 35px;font-weight: 700;}
+		     .honbao .honbao-dd{border-bottom: 1px solid #e6e6e6;width: 703px;margin: 0  12px ;}
+		     .honbao dd li{width: 140px;height:32px;background:#f9f9f9 ;float: left;line-height: 32px;text-align: center;}
+		     .honbao-ctn{padding: 0 16px;width:695px;height:95px;border:1px solid #f6e0af;clear: both;position: relative;top:80px;background: #fffbf2;}
+		     .honbao-ctn >p{height:22px;padding-top: 20px;border-bottom: 1px dashed darkgray;}
+		     .honbao-ctn >div p{line-height:15px;margin-top: 8px;}
+		     /*我的优惠卷*/
+		    .youhuijuan{height:203px;border: 1px solid #d9c7a7;position: relative;top:30px;padding:0 12px}
+		    .youhuijuan .yhj-p1{height:37px;line-height:37px;}
+		    .youhuijuan .yhj-p2{height:27px;line-height:27px;font-size:12px}
+		    .youhuijuan .yhj-p2 input {width:60px;}
+		    .youhuijuan .yhj-btn{background: #ff9700;color:#FFFFFF;border-radius: 10%;}
+		    .youhuijuan .yhj-p3 {height:15px;padding-top:32px;font-weight:bold;}
+		    .youhuijuan-ctn {height:32px;background: #F9F9F9;border:1px solid #e6e6e6;position: relative;top:30px}
+		    .youhuijuan-ctn li{position: absolute;line-height: 32px;}
+		    .youhuijuan-ctn .yhj-li1{left:14px}
+		    .youhuijuan-ctn .yhj-li2{left:132px}
+		    .youhuijuan-ctn .yhj-li3{left:300px}
+		    .youhuijuan-ctn .yhj-li4{left:413px}
+		    .youhuijuan-ctn .yhj-li5{right:110px}
+		    .yhj-shuoming{position: relative;top:80px;background: #FEF5E6;border:1px solid #F6E0AF;width: 727px;left:-12px;min-height: 500px;}
+		    .yhj-shuoming-p1{height:22px;padding-top:18px;border-bottom: 1px dashed #F6E0AF;padding-left:16px;font-weight: bold;font-size:14px}
+		     .yhj-shuoming-li{line-height:20px;padding-left:16px;font-size:12px} 
+		     .yhj-shuom p{height:34px;border-bottom: 1px dashed #F6E0AF;line-height: 34px;padding-left:16px;font-weight: bold;}
+		      .yhj-shuom>div{text-align: center;vertical-align: middle;}
+		      #clear{background:#fef5e6;height:400px;display: none;}
+		      /*购物车右边部分*/
+		     .car-anbo-ctn{height:36px;line-height:36px;background: #fbf1e0;padding-left: 14px;}
+		     .car-anbo dl{height:52px;padding:5px 14px;border-bottom: 1px dashed darkgray;background: #fffaf2;}
+		     .car-anbo dl dd,.car-anbo dl dt{float: left;height:62px}
+		     .car-anbo dt{width:53px}
+		     .car-anbo dd{width:145px}
+		     .car-anbo dd p{line-height: 24px;font-size: 12px;color:darkgray}
+		     #car-anbo-p{color:#666666;font-size:20px}
+		     #no-border{border-bottom: none;}
+		     /*尾部*/
+		     .foot{clear:both;background:#f8f8f8;position: relative;border-top: 2px solid #A60D0D;margin-top:50px}
+		     .foot-ctn{width:990px;margin:0 auto;height:164px;}
+		     .foot-ctn dl{width:143px;height:108px;border-right: 1px dashed darkgray;padding-left:20px;float: left;margin-top: 16px;}
+		     .foot-ctn dl dt{font-size:15px;color:#000000}
+		     .foot-ctn dl dd li{line-height: 24px;font-size: 12px;color:gray}
+		     .foot-ctn .odl-noborder{border-right: none;}
+             .foot-ctn .oli-fontred{color:#A60D0D;font-size: 14px;}
+             /*尾部底部*/		
+             .foot-bottom{width:990px ;margin:0 auto;height:42px;border-top: 1px dashed darkgray;}
+             .foot-bottom .foot-bottom-left{width:170px;line-height: 42px;font-size:12px;float:left}     
+		     .foot-bottom ul{float: right;width:580px;height:42px}
+		     .foot-bottom ul li{padding:0 5px;float: left;font-size:12px;height:42px;line-height: 42px;}
+      #nav{
+      	width: 100%;
+      	height: 44px;
+      	background-color: #b20000; 
+		margin-top: 10px;
+      }
+      #nav_1{
+      	width: 990px;
+      	height: 42px;
+      	margin: 0 auto;
+      	font-size: 15px;
+        
+      }
+      #nav_1 ul li{
+      	float: left;
+      	height: 42px;
+      	
+      	text-align: center;
+      	line-height: 42px;
+      }
+       #nav_1 ul li a{
+       	   display: block;
+       	   padding: 0 15px;
+       	   color: #fff;
+       }
+        #nav_1 ul li a:hover{background-color: #1c1c1c;}
+       #nav_1_right{
+       	   color: #fff;
+       	   display: block;
+       	   width: 90px;
+       	   height: 16px;
+       	   float: right;
+       	   
+       	   padding-right: 12px;
+       } 
+		</style>
+		<link href="css/reset.css">
+		<script src="js/jquery-1.12.0.js"></script>
+		<script src="js/mycookie.js"></script>
+		<script>
+			$(function(){
+			var user=getCookie("user");
+				
+		  	  $(".top-ctn1").find("label b").html(user);
+		  	  $(".tuichu").on("click",function(){
+		  	  		location.href="index.html";
+		  	  })
+				$(".table-ctn,.table-ctn1,.table-ctn2").hide();
+				$(".car-ctn ul li").eq(1).css({"border-bottom": "none","border-left": "1px solid #D9C7A7","border-top": "2px solid #a60d0d","border-right": "1px solid #D9C7A7","display": "block","background":"#fef5e6"})
+				$(".table-ctn").show();
+				var str = getCookie("arr");
+				var arr=JSON.parse(str);
+	//        		alert(arr[1].title);
+			if($(".table-ctn:visible")){
+			$.each(arr, function(idx,item) {
+			
+					var otr=$("<tr/>").addClass("gouwudan");
+					var otr1=$("<tr/>").addClass("otr1");
+					var otr2=$("<tr/>").addClass("otr2");
+					var $table=$("table");
+					var otd1=$("<td/>").addClass("otr1_left").attr("colspan","2");
+					var otd2=$("<td/>").addClass("otr1_center").attr("colspan","2");
+					var otd3=$("<td/>").addClass("otr1_right").attr("colspan","3");
+					var otd4=$("<td/>").addClass("otr2_middle").attr("colspan","2").appendTo(otr2)
+					var otd5=$("<td/>");
+					var otd6=$("<td/>");
+					var otd7=$("<td/>");
+					var otd8=$("<td/>");
+					var otd9=$("<td/>")
+					  otd1.html("订单号:"+item.str1date+"1112121").appendTo(otr1);
+					  otd2.text("支付宝方式:支付宝").appendTo(otr1);
+					  otd3.html("下单时间:"+item.strdate).appendTo(otr1);
+					  otr1.appendTo($table)
+					  
+					  otd4.html("<img/>"+"<span>"+item.title+"</span>").find("img").attr("src",item.img).css({"width":"86px","height":"66px"});
+					  
+					  //otd4.html("<span>"+item.title+"</span>")
+					  otd5.html(item.price).appendTo(otr2);
+					  otd6.html(item.count).appendTo(otr2);
+					  otd7.html(item.price+"<br>"+"运费0.00元"+"<br>"+"发票0.00元").appendTo(otr2);
+					  otd8.html("等待买家付款"+"<br>"+"<a>"+"订单详情"+"</a>").appendTo(otr2);
+					  otd9.html("<input>"+"<p>"+"取消"+"</p>").appendTo(otr2)
+					  otr2.appendTo($table);
+					  //otr.appendTo($table);
+					  otd9.find("input").attr({"value":"去付款","type":"button"})
+					  otd9.find("p").css("display","block");
+					  otd9.find("p").on("click",function(){
+					  	otr1.remove();
+					  	otr2.remove();
+					  
+					  })
+					  otd9.find("input").on("click",function(){
+					  		var index=$(this).index();
+					  		addCookie("index",JSON.stringify(index),10)
+					  		location.href="dindbuild.html"
+					  	
+					  })
+					 
+					  
+				});
+			}
+				$(".car-ctn ul").on("click","li",function(){
+					$(".table-ctn .table-ctn1 .table-ctn2").hide();
+					$(".car-ctn ul li").css({"border-bottom": "1px solid #D9C7A7","border-left":"none","border-top":"none","border-right":"none"})
+					var index=$(this).index();
+					
+					$(".car-ctn ul li ").eq(index).css({"border-bottom": "none","border-left": "1px solid #D9C7A7","border-top": "2px solid #a60d0d","border-right": "1px solid #D9C7A7","display": "block","background":"#fef5e6"})
+					
+					    if(index==0||index==1){
+							$(".table-ctn").show().parent().css("min-height","375px");
+							$(".table-ctn1").hide();
+							$(".table-ctn2").hide();
+							$("#clear").hide();
+							
+						}else if(index==2){
+							$(".table-ctn2").show().parent().css("min-height","850px");
+							$(".table-ctn").hide();
+							$(".table-ctn1").hide();
+							$("#clear").show();
+						}else if(index==3){
+						 	$(".table-ctn1").show().parent().css("min-height","375px");
+							$(".table-ctn").hide();
+							$(".table-ctn2").hide();
+							$("#clear").hide();
+						}
+					   
+					    
+					
+				
+				})
+				
+			
+			})
+			
+		
+		</script>
+	</head>
+	<body>
+		<div class="top">
+		   <div class="top-ctn">
+				<div class="top-ctn1">
+					<label>你好,<b>541565555111</b></b></label><span><a href="#" class="tuichu">[退出]</a></span>
+				</div>
+				<ul>
+					<li id="oli"><a href="#">中关村商城</a></li>
+					<li><a href="#">手机版</a></li>
+					<li><a href="#">收藏</a></li>
+					<li><a href="#">订阅团购推荐</a></li>
+					<li>客服电话: <span>400-678-0068</span></li>
+				</ul>
+		  </div>
+		</div>
+			<div class="sousuo">
+				<a href="#"><img src="img2/dingdian.jpg"> </a>
+				<span>中国第一个垂直团购平台</span>
+				<a href="#"><img src="img2/diandan1.jpg" style="width:300px"></a>
+                <div class="sousuo-btn">
+                	<input type="text"><button>搜索</button>
+                </div>			
+			</div>
+		<div id="nav">
+			<div id="nav_1">
+			<ul>
+				<li><a href="">首页</a></li>
+				<li><a href="">Z爆款</a></li>
+				<li><a href="">数码团</a></li>
+				<li><a href="">即将开团</a></li>
+				<li><a href="">服务保障</a></li>
+				<li><a href="">帮助中心</a></li>
+			</ul>
+			    <span id="nav_1_right"><img src="img2/dindan2.jpg"/></span>
+			</div>
+        </div>
+        <div class="box-ctn">
+        	<div class="car clearfix">
+	        	<div class="car-ctn">
+	        			<ul>
+	        				<li><a href="#"> 代付款订单</a></li>
+	        				<li><a href="#"> 全部订单</a></li>
+	        				<li><a href="#">优惠券</a></li>
+	        				<li><a href="#">我的红包</a></li>
+	        				<p></p>
+	        			</ul>
+	        	<!--	我的订单-->
+	          <div class="table-ctn">
+		        	<table cellspacing="0">
+		        		<tr>
+		        			<th>团购项目</th>
+		        			<th>金额</th>
+		        			<th>(元)</th>
+		        			<th>数量</th>
+		        			<th>总计(元)</th>
+		        			<th>订单状态</th>
+		        			<th>操作</th>
+		        		</tr>
+		        		<!--<tr class="gouwudan">
+		        		<tr class="otr1">
+		        			<td colspan="2" class="otr1_left">订单号:2015090715064731728490</td>
+		        			
+		        			<td colspan="2" class="otr1_center">支付方式:支付宝</td>
+		        			<td colspan="3" class="otr1_right">下单时间:2015-9-30 15:20:47</td>
+		        		</tr>
+		        		<tr class="otr2">
+		        			<td class="otr2_middle" colspan="2"><img src="img2/diandan3.jpg"><span>奔腾的水蕊负离<br>子电吹风PH90201造型护理<br>首选大功率快速干发</span></td>
+		        			
+		        			<td>85</td>
+		        			<td>1</td>
+		        			<td>85<br>运费0.00元<br>发票0.00元</td>
+		        			<td>等待买家付款<br><a href="#">订单详情</a></td>
+		        			<td><input type="button" value="去付款"> <p>取消</p></td>
+		        		</tr>
+		        		</tr>-->
+		        	
+		        	</table>
+		        	<p><img src="img2/dindanbtn.jpg"><span>1</span><img src="img2/diandanbtn2.jpg"></p>
+	        	</div>
+	        	<!--我的红包-->
+	        	<div class="table-ctn1">
+	        		<div class="honbao">
+	        			<p>已绑定的红包:</p>
+	        			<dd class="honbao-dd">
+	        				<li>红包名称</li>
+	        				<li>红包面值(元)</li>
+	        				<li>有效期</li>
+	        				<li>红包状态</li>
+	        				<li>备注</li>
+	        			</dd>
+	        		</div>
+	        		<div class="honbao-ctn">
+	        			<p>红包说明</p>
+	        			<div>
+	        				<p>1  红包可在下单时，直接扣支付宝金额，退款时不退换红包款项</p>
+	        				<p>2 当红包金额大于商品金额时，无法完成交易，订单金额要大于红包金额方可使用</p>
+	        			</div>
+	        		
+	        		
+	        		</div>
+	        	
+	        	</div>
+	        	<!--我的优惠券-->
+	        	<div class="table-ctn2">
+	        		<div class="youhuijuan">
+	        			<p class="yhj-p1"><strong>使用优惠卷</strong></p>
+	        			<p class="yhj-p2">请输入你的手机优惠卷密码:<input type="text">-<input type="text">-<input type="text">-<input type="text">-<input type="button" value="绑定" class="yhj-btn">密码只包含数字0-9，大写字母A-F</p>
+	        			<p class="yhj-p3">已绑定的优惠卷:(每次只能使用一张优惠卷哦，每天最多能绑定2张优惠卷)</p>
+	        			<div class="youhuijuan-ctn">
+	        				<li class="yhj-li1">金额(元)</li>
+	        				<li class="yhj-li2">优惠卷密码</li>
+	        				<li class="yhj-li3">有效期</li>
+	        				<li class="yhj-li4">状态</li>
+	        				<li class="yhj-li5">备注</li>
+	        				
+	        			</div>
+	        			<div class="yhj-shuoming">
+	        				<p class="yhj-shuoming-p1">优惠卷温馨提示</p>
+	        				<p >
+	        					<li class="yhj-shuoming-li">1 优惠卷可在下单时直接抵扣和支付金额，退款时不退还代金券项；</li>
+	        					<li class="yhj-shuoming-li">2 一个订单只能使用一张代金券，不能同时使用多张；</li>
+	        					<li class="yhj-shuoming-li">3  当红包金额大于商品金额时，无法完成交易，订单金额要大于红包金额方可使用<br>点击查看更多<a href="#">优惠卷使用规则</a></li>
+	        				</p>
+	        				<div class="yhj-shuom">
+	        					<p>使用卷说明</p>
+	        					<div>
+	        						<img src="img2/shuoming.jpg">
+	        					
+	        					
+	        					</div>
+	        				</div>
+	        			
+	        			</div>
+	        		
+	        		</div>
+	        	
+	        	</div>
+	        	</div>
+	        	<div class="car-anbo">
+	        		<div class="car-anbo-ctn">六重保障，放心购买</div>
+	        		<dl>
+	        			<dt><a href="#"><img src="img2/baozhang.jpg"></a></dt>
+	        			<dd>
+	        			<p id="car-anbo-p">把控货源</p>
+	        			<p>货源严把控，品质有保障</p>
+	        		
+	        		</dl>
+	        		<dl>
+	        			<dt><a href="#"><img src="img2/baozhang1.jpg"></a></dt>
+	        			<dd>
+	        			<p id="car-anbo-p">包退包换</p>
+	        			<p>质量问题7天退，15天换</p>
+	        		
+	        		</dl>
+	        		<dl>
+	        			<dt><a href="#"><img src="img2/baozhang2.jpg"></a></dt>
+	        			<dd>
+	        			<p id="car-anbo-p">支持退款</p>
+	        			<p>购物可退款，消费无顾虑</p>
+	        		
+	        		</dl>
+	        		<dl>
+	        			<dt><a href="#"><img src="img2/baozhang3.jpg"></a></dt>
+	        			<dd>
+	        			<p id="car-anbo-p">物流赔付</p>
+	        			<p>配货遇损失，运费Z团付</p>
+	        		
+	        		</dl>
+	        		<dl>
+	        			<dt><a href="#"><img src="img2/baozhang4.jpg"></a></dt>
+	        			<dd>
+	        			<p id="car-anbo-p">支付安全</p>
+	        			<p>太平台支付，遍历安全</p>
+	        		
+	        		</dl>
+	        		<dl id="no-border">
+	        			<dt><a href="#"><img src="img2/baozhang5.jpg"></a></dt>
+	        			<dd>
+	        			<p id="car-anbo-p">服务保障</p>
+	        			<p>多渠道服务，购物舒心</p>
+	        		
+	        		</dl>
+	        	</div>
+            </div>
+        </div>
+       <div  id="clear"></div>
+        <div class="foot">
+        	<div class="foot-ctn">
+        		<dl>
+        			<dt>帮助中心</dt>
+        			<dd>
+        				<li>购物指南</li>
+        				<li>优惠卷红包</li>
+        				<li>常见问题</li>
+        				<li>售后服务</li>
+        			</dd>
+        		</dl>
+        		<dl>
+        			<dt>手机版Z团</dt>
+        			<dd>
+        				<li>iphone客户端</li>
+        				
+        			</dd>
+        		</dl>
+        		<dl>
+        			<dt>关注Z团</dt>
+        			<dd>
+        				<li>Z团新浪微博</li>
+        				<li>Z团腾讯微博</li>
+        				
+        			</dd>
+        		</dl>
+        		<dl>
+        			<dt>商务合作</dt>
+        			<dd>
+        				<li>媒体合作</li>
+        				
+        			</dd>
+        		</dl>
+        		<dl>
+        			<dt>公司信息</dt>
+        			<dd>
+        				<li>关于中关村在线</li>
+        			
+        			</dd>
+        		</dl>
+        		<dl class="odl-noborder">
+        			<dt>客服电话</dt>
+        			<dd>
+        				<li class="oli-fontred">400-678-0086</li>
+        				<li>周一致周日 9:00-18:00</li>
+        				
+        			</dd>
+        		</dl>
+        	
+        	
+        	</div>
+        	<div class="foot-bottom">
+	        		<div class="foot-bottom-left">
+	        			<p>@2015中关村在线  版权所有</p>
+	        		</div>
+	        		<ul>
+	        			<li>ZOL简介</li>
+	        			<li>ZOL历程</li>
+	        			<li>广告服务</li>
+	        			<li>招聘(9月)</li>
+	        			<li>互动营销</li>
+	        			<li>品牌大全</li>
+	        			<li>站点地图</li>
+	        			<li>联系方式</li>
+	        			<li>RSS订阅</li>
+	        			<li style="color: #ff0000;">反馈/纠错</li>
+	        		
+	        		</ul>
+        	</div>
+        
+        </div>
+	</body>
+</html>

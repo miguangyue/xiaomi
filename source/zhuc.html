@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin:0;padding:0;border: none;}
+			ul,li{list-style: none;}
+			a{text-decoration: none;}
+			.head{width:1000px;height:92px;margin:0 auto;}
+			.head p{width:368px;height:92px;float: left;}
+			.head p a{display: block;width: 196px;float:left}
+			.head p span {display: block;width:172px;line-height: 92px;float: right;font-size: 14px;}
+			.head  ul{width: 225px;float:right;height:92px;line-height:92px}
+			.head ul li{float:left;font-size: 14px;padding-left: 5px;}
+			.head ul li a{color:#f00}
+			.ctn{height:767px;width:1000px;margin:0 auto;border: 1px solid #e6e6e6;margin-top:2px;}
+			.ctn .p1{background:#fafafa;height:62px;padding-left:96px;line-height: 62px;}
+			.ctn .p2{width:500px;height:40px;margin-left:96px;margin-top: 20px;}
+			.ctn .span1{width:168px;border-left: 1px solid #CCCCCC;display: block;float: left;height:40px;border-bottom:1px solid #CCCCCC ;text-align:center;padding:0 40px;line-height:40px}
+			.span1 img{vertical-align: middle;}
+			.ctn .span2{width:108px;display: block;float: right;height:40px;border-bottom: 1px solid #CCCCCC;border-left: 1px solid #CCCCCC;padding:0 70px;line-height:40px}
+			.spancolor{border-top:1px solid #FF0000;border-bottom: none;}
+			form{margin-top: 28px;float:left}
+			form span{margin-top:10px;margin-bottom: 10px;display: block;width:295px;margin-left:181px;}
+			form label{margin-left:76px;width:85px;padding:0 10px}
+			input{border: 1px solid #CCCCCC;height:36px;width:295px}
+			.yz{width:210px;}
+			.btn2{width:80px;margin-left: 5px;height:36px}
+			.btn1{width:295px;margin-left: 181px;background-color:red;line-height:36px;height:36px;text-align:center;margin-top:28px;}
+			.right{float:right;margin-right:85px}
+			.right p{position: relative;top:-40px;}
+			.right >a{display: block;}
+		</style>
+		<script src="js/jquery-1.12.0.js"></script>
+		<script src="js/jquery.validate.js"></script>
+		<script src="js/jquery.validate.messages_zh.js"></script>
+		<script src="js/mycookie.js"></script>
+		<script>
+			$(function(){
+			$(".p2").find("span").eq(0).css({"border-top":"1px solid #FF0000","border-bottom": "none",color:"red"})
+				 $(".p2").on("click","span",function(){
+				 
+				 	var index=$(this).index();
+				 	$(".p2").find("span").eq(index).css({"border-top":"1px solid #FF0000","border-bottom": "none",color:"red"}).siblings("span").css({"border-top":"none","border-bottom": "1px solid #cccccc",color:"black"})
+				 })
+                 var look1;
+				 $(".tel").on("blur",function(){
+				 	var str1=$(this).val();
+				 	var reg=/^1[3-8]\d{9}/;
+				 	look1=reg.test(str1);
+				 	if(str1.length==0){
+				 		$(".b1").html("手机号输入不能为空");
+				 	}else {
+				 		 if(look1==false){
+				 		 	$(".b1").html("手机号输入不合法");
+				 		 }else{
+				 		 	$(".b1").html(" ")
+				 		 }
+				 	
+				 	}
+				 })
+
+            function randomNum(min,max){
+				var result = parseInt(Math.random()*(max-min+1)) + min;//0~1
+				return result;
+			}
+            function random(){
+                 var str = '0123456789abcdefghikjlzxvnmqwtruop';
+              	 var result="";
+              	 for(var i=0;i<6;i++){
+              	  	result += str[randomNum(0,str.length-1)];
+              	  }
+              	 $(".btn2").html(result)
+              }
+            
+              random();
+              $(".b2").on("click",function(){
+              	 random();
+              	
+              })
+              var look3;
+			$(".yz").on("blur",function(){
+			    var reg1=new RegExp($(".btn2").text())
+			    look3=reg1.test($(".yz").val())
+				if(look3==false){
+					$(".b6").html("验证码出错");
+				}else{
+					$(".b6").html(" ");
+				}
+			})
+			var look2;
+			
+			$(".pwd").on("blur",function(){
+				var str2=$(".pwd").val();
+				var reg2=/[0-9a-zA-Z]{5,16}$/;
+				look2=reg2.test(str2);
+				if($(".pwd").val().length==0){
+				 	$(".b3").html("密码不能为空");
+			 }else
+			 		 if(look1==false){
+			 		 	$(".b3").html("密码输入不合法");
+			 		 }else{
+			 		 	$(".b3").html(" ")
+			 		 }
+
+			})
+				var look4;
+			$(".repwd").on("blur",function(){
+				  var reg3=new RegExp($(".pwd").val())
+				  look4=reg3.test($(".repwd").val())
+				  
+				if(look4==false){
+					$(".b4").html("密码或者确认密码不正确");
+				}else{
+					$(".b4").html(" ");
+				}
+			})
+			var arrc=[];
+			$(".btn1").on("click",function(){
+				if(look1&&look2&&look3&&look4&&$(":checkbox:checked")){
+					alert("注册成功");
+					var tel=$(".tel").val();
+					var pwd1=$(".pwd1").val();
+					var obj={};
+					obj.tel=tel;
+					obj.pwd1=pwd1;
+					arrc.push(obj);
+					addCookie("obj",JSON.stringify(arrc),10);
+					
+					
+				}else{
+					alert("注册失败")
+				
+				}
+			})
+				 
+		})
+		
+		</script>
+	</head>
+	<body>
+		<div class="head">
+		    <p>
+			<a href="#"><img src="img/zc1.jpg"></a>
+			<span>中关村在线旗下网上商城</span>
+			</p>
+			<ul>
+				<li>已经有ZOL商城账户？</li>
+				<li><a href="index.html">到首页登录</a></li>
+			</ul>
+		</div>
+		<div class="ctn">
+			<p class="p1">30秒快速注册，加入ZOL商城</p>
+			<p class="p2"><span class="span1"><img src="img/zc2.jpg">  用手机好注册</span><span class="span2">其他</span></p>
+			<form>
+				<label>*手机号:&nbsp;</label><input type="text" name="tel" class="tel" /><b class="b1"></b><br><span>请填手机好码</span><br>
+				<label>*验证码:&nbsp;</label><input type="text" name="yz"  class="yz"/><button class="btn2">5</button><b class="b2">换一张</b><b class="b6"></b><br><span>请填写验证码</span><br>
+				<label>&nbsp;*密码:&nbsp;</label><input type="password" name="pwd" class="pwd pwd1"/><b class="b3"></b><br><span>5-16位字母和数字组成，不可用特殊字符</span><br>
+				<label>*确认密码:</label><input type="password" name="repwd" class="repwd"/><b class="b4"></b><br><span>再次输入密码</span><br>
+				<input type="checkbox" name="ckbox" style="width:20px;height:20px;margin-left: 181px;"/><strong>《同意商城用户协议》《隐私说明》</strong><br>
+				<button class="btn1">注册</button>
+			
+			</form>
+			<div class="right">
+			<p>如果已经注册，请<a href="#">直接登录</a><br>或者用以下的方式登录</p>
+			<a href="#"><img src="img/login1.jpg"></a><br>
+			<a href="#"><img src="img/login2.jpg"></a><br>
+			<a href="#"><img src="img/login3.jpg"></a><br>
+			<a href="#"><img src="img/login4.jpg"></a><br>
+            <a href="#"><img src="img/login5.jpg"></a>	<br>		
+			</div>
+		
+		</div>
+	
+	
+	
+	
+	
+	
+	
+	</body>
+</html>
