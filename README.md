@@ -1,9 +1,9 @@
 angular前端excel导出解决文件过大问题处理：
-exportList(obj) {
-  let obj = {
+ 格式： obj = {
             html: '<tr style='background:#DDECE9;font-weight:bold;'><td >序号</td><td style=vnd.ms-excel.numberformat:@>xxx</td></tr>...',
             name: '订单列表',
   };
+exportList(obj) {
  let   template =
  '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table border=1 width=1002 style="text-align:center">{table}</table></body></html>';
         let ctx = {
